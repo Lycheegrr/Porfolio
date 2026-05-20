@@ -132,6 +132,13 @@ const INDUSTRY_ICONS = {
       <path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" />
     </svg>
   ),
+  'Real Estate': () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 21h18" />
+      <path d="M5 21V7l7-4 7 4v14" />
+      <rect x="9" y="14" width="6" height="7" />
+    </svg>
+  ),
 }
 
 const LogoMark = () => (
@@ -347,6 +354,7 @@ const clients = [
   { name: 'Integrated Resort & Casino', industry: 'Entertainment & Integrated Resort' },
   { name: 'National Water Utility', industry: 'Utilities' },
   { name: 'Managed IT Services Provider', industry: 'IT Services' },
+  { name: 'Real Estate Developer', industry: 'Real Estate' },
 ]
 
 const projects = [
