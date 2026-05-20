@@ -903,6 +903,7 @@ footer {
 .fade-in.visible .skill-category:nth-child(8) { transition-delay: 420ms; }
 .fade-in.visible .client-card:nth-child(9),
 .fade-in.visible .skill-category:nth-child(9) { transition-delay: 480ms; }
+.fade-in.visible .skill-category:nth-child(10) { transition-delay: 540ms; }
 
 /* ===== Form Feedback ===== */
 .form-feedback {
