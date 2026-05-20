@@ -135,24 +135,11 @@ const INDUSTRY_ICONS = {
 }
 
 const LogoMark = () => (
-  <svg viewBox="0 0 56 38" width="52" height="34" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    {/* Hard hat dome */}
-    <path d="M 5,17 A 8,6 0 0 1 21,17" />
-    {/* Hard hat brim */}
-    <line x1="3" y1="17" x2="23" y2="17" />
-    {/* Head */}
-    <circle cx="13" cy="22.5" r="3.5" />
-    {/* Shoulders */}
-    <path d="M 3,37 Q 7,29 10.5,28 Q 13,27.2 15.5,28 Q 19,29 25,37" />
-    {/* Gear — 6-tooth star polygon centered at (24, 30) */}
-    <polygon points="29.5,30 27.3,31.9 26.8,34.8 24,33.8 21.2,34.8 20.7,31.9 18.5,30 20.7,28.1 21.2,25.2 24,26.2 26.8,25.2 27.3,28.1" />
-    <circle cx="24" cy="30" r="2" />
-    {/* Globe centered at (44, 17) */}
-    <circle cx="44" cy="17" r="9" />
-    <ellipse cx="44" cy="17" rx="3.5" ry="9" />
-    <line x1="35" y1="17" x2="53" y2="17" />
-    <path d="M 37,11 Q 44,8 51,11" />
-    <path d="M 37,23 Q 44,26 51,23" />
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true">
+    <circle cx="12" cy="19" r="1.5" fill="currentColor" stroke="none" />
+    <path d="M 8.5 15.5 A 5 5 0 0 1 15.5 15.5" />
+    <path d="M 5.5 12 A 9.2 9.2 0 0 1 18.5 12" />
+    <path d="M 2.5 8.5 A 13.5 13.5 0 0 1 21.5 8.5" />
   </svg>
 )
 
@@ -591,7 +578,10 @@ function App() {
     <>
       <div className="scroll-progress" style={{ width: `${scrollProgress}%` }} aria-hidden="true" />
       <nav className="navbar" ref={menuRef}>
-        <span className="nav-logo">Marc J. Balcita</span>
+        <a href="#home" className="nav-logo">
+          <LogoMark />
+          <span>Marc J. Balcita</span>
+        </a>
         <ul className={`nav-links${menuOpen ? ' open' : ''}`}>
           {NAV_LINKS.map(({ href, label }) => (
             <li key={href}>
@@ -624,7 +614,7 @@ function App() {
             <span className="cursor" aria-hidden="true" />
           </p>
           <p className="hero-sub">
-            NOC &amp; Infrastructure Operations -3+ years delivering enterprise network design,
+            NOC &amp; Infrastructure Operations · 3+ years delivering enterprise network design,
             security, and multi-site deployments across banking, healthcare, telecom, and data center environments.
           </p>
           <div className="hero-actions">
