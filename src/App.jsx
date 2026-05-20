@@ -373,7 +373,7 @@ const projects = [
     images: [balcitaScreenshot],
     tags: ['Angular 21', 'TypeScript', 'Node.js', 'Netlify Functions', 'HTML5 / CSS3', 'GitHub CI/CD'],
     live: 'https://balcita-fiberoptics.netlify.app/home',
-    github: null,
+    github: 'https://github.com/BalcitaFiberOpticInstallation/BalcitaFiberoptic',
   },
   {
     title: 'Personal Portfolio Website',
@@ -438,62 +438,6 @@ const skillCategories = [
   },
 ]
 
-const STATUS_LABELS = {
-  done:     'Completed',
-  active:   'In Progress',
-  next:     'Up Next',
-  planned:  'Planned',
-  longterm: 'Long-Term',
-}
-
-const roadmapPhases = [
-  {
-    phase: 'Phase 1',
-    title: 'CCNA — Foundation',
-    status: 'done',
-    certs: ['Cisco Certified Network Associate (CCNA)'],
-    skills: ['Routing & Switching', 'VLANs & STP', 'OSPF / EIGRP', 'Subnetting', 'ACLs', 'NAT', 'Network Security Basics'],
-    note: 'Already certified. Actively applying across enterprise fiber, NOC, and data center deployments.',
-  },
-  {
-    phase: 'Phase 2',
-    title: 'CCNP Enterprise — Core',
-    status: 'next',
-    certs: ['Cisco Certified Network Professional Enterprise (CCNP)'],
-    skills: ['Advanced Routing (OSPF / BGP / EIGRP)', 'SD-WAN', 'QoS', 'Network Automation Basics', 'Multicast'],
-    note: 'Builds directly on CCNA. Target: pass ENCOR exam to earn CCNP Enterprise core.',
-  },
-  {
-    phase: 'Phase 3',
-    title: 'Security Specialization',
-    status: 'planned',
-    certs: ['Palo Alto PCNSE (Certified Network Security Engineer)', 'CompTIA Security+'],
-    skills: ['Next-Gen Firewall', 'GlobalProtect VPN', 'Threat Prevention', 'Zero Trust', 'IDS / IPS', 'SIEM'],
-    note: 'Formalizes hands-on Palo Alto experience from field deployments and NOC operations.',
-  },
-  {
-    phase: 'Phase 4',
-    title: 'Cloud & Automation',
-    status: 'planned',
-    certs: ['AWS Solutions Architect – Associate', 'Microsoft AZ-104 (Azure Administrator)', 'Cisco DevNet Associate'],
-    skills: ['AWS / Azure Networking', 'Python for Network Automation', 'Ansible', 'Terraform', 'REST APIs', 'Git / CI-CD'],
-    note: 'Bridges traditional network engineering with cloud-native and infrastructure-as-code practices.',
-  },
-  {
-    phase: 'Phase 5',
-    title: 'Expert Level — CCIE & CISSP',
-    status: 'longterm',
-    certs: ['Cisco Certified Internetwork Expert (CCIE) — Enterprise Infrastructure', 'CISSP (Certified Information Systems Security Professional)'],
-    skills: ['Advanced Network Architecture', 'Large-Scale Enterprise Design', 'Security Governance', 'Risk Management', 'Lab & Written Exam Mastery'],
-    note: 'Ultimate expert-level milestone combining Cisco\'s highest networking credential with globally recognized security leadership.',
-  },
-]
-
-const roadmapOutcomes = [
-  { title: 'Senior Network Engineer', desc: 'Design and own multi-site enterprise network infrastructure end-to-end.' },
-  { title: 'Network Security Architect', desc: 'Lead firewall policy, VPN, and zero-trust implementation across cloud and on-prem.' },
-  { title: 'Cloud Network Engineer', desc: 'Build and automate hybrid cloud networking across AWS and Azure environments.' },
-]
 
 const services = [
   {
@@ -574,7 +518,6 @@ const NAV_LINKS = [
   { href: '#clients', label: 'Industries' },
   { href: '#projects', label: 'Projects' },
   { href: '#skills', label: 'Skills' },
-  { href: '#roadmap', label: 'Roadmap' },
   { href: '#contact', label: 'Contact' },
 ]
 
@@ -585,7 +528,7 @@ function App() {
   const [formState, setFormState] = useState('idle') // 'idle' | 'sending' | 'sent' | 'error'
   const [lightbox, setLightbox] = useState(null)
   const [flippedCard, setFlippedCard] = useState(null)
-  const active = useActiveSection(['services', 'about', 'experience', 'clients', 'projects', 'skills', 'roadmap', 'contact'])
+  const active = useActiveSection(['services', 'about', 'experience', 'clients', 'projects', 'skills', 'contact'])
   const typedRole = useTypewriter(HERO_ROLES)
   const menuRef = useRef(null)
   const formRef = useRef(null)
@@ -908,44 +851,6 @@ function App() {
               )}
             </div>
           ))}
-        </div>
-      </FadeIn>
-
-      <FadeIn tag="section" id="roadmap">
-        <h2>Certification Roadmap</h2>
-        <p className="section-sub">A structured path from CCNA to expert-level credentials — building toward senior engineering, security architecture, and cloud networking roles.</p>
-        <div className="roadmap-timeline">
-          {roadmapPhases.map((p) => (
-            <div key={p.phase} className={`roadmap-card roadmap-${p.status}`}>
-              <div className="roadmap-card-header">
-                <span className="roadmap-phase">{p.phase}</span>
-                <span className={`roadmap-status roadmap-status-${p.status}`}>{STATUS_LABELS[p.status]}</span>
-              </div>
-              <h3 className="roadmap-title">{p.title}</h3>
-              <div className="roadmap-certs">
-                {p.certs.map((c) => (
-                  <span key={c} className="roadmap-cert">{c}</span>
-                ))}
-              </div>
-              <div className="roadmap-skills">
-                {p.skills.map((s) => (
-                  <span key={s} className="skill-badge">{s}</span>
-                ))}
-              </div>
-              {p.note && <p className="roadmap-note">{p.note}</p>}
-            </div>
-          ))}
-        </div>
-        <div className="roadmap-outcomes">
-          <h3>Target Career Outcomes</h3>
-          <div className="roadmap-outcomes-grid">
-            {roadmapOutcomes.map((o) => (
-              <div key={o.title} className="roadmap-outcome-card">
-                <strong>{o.title}</strong>
-                <p>{o.desc}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </FadeIn>
 
