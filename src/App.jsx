@@ -641,9 +641,8 @@ function App() {
     <>
       <div className="scroll-progress" style={{ width: `${scrollProgress}%` }} aria-hidden="true" />
       <nav className="navbar" ref={menuRef}>
-        <a href="#home" className="nav-logo">
+        <a href="#home" className="nav-logo" aria-label="Marc J. Balcita">
           <LogoMark />
-          <span>Marc J. Balcita</span>
         </a>
         <ul className={`nav-links${menuOpen ? ' open' : ''}`}>
           {NAV_LINKS.map(({ href, label }) => (
