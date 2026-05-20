@@ -196,12 +196,15 @@ const experience = [
     clients: 'St. Luke\'s Medical Center (QC & BGC), Bangko Sentral ng Pilipinas, San Miguel Corporation, Procter & Gamble, OKADA Manila, PLDT Vitro (Makati & Pasig), Equinix, Manila Water, TIM',
     bullets: [
       'Delivered enterprise fiber backbone termination, fusion splicing, and structured cabling across multiple sites, including hospitals, data centers, and corporate environments.',
-      'Performed OTDR, Fluke copper/fiber, LinkWare, and Anritsu testing for commissioning, troubleshooting, and client acceptance.',
+      'Performed OTDR (SM/MM), Fluke copper/fiber, LinkWare, and Anritsu testing for commissioning, troubleshooting, and client acceptance.',
       'Installed, labeled, and documented fiber infrastructure in ODFs, FDBs, splice trays, and rack-mounted enclosures.',
       'Built and organized server racks, patch panels, switches, firewalls, and fiber distribution frames; executed rack-to-rack and rack-to-endpoint patching with proper labeling, airflow consideration, and bend-radius compliance.',
-      'Supported deployment, validation, and connectivity checks for 100+ endpoints and access points, including enterprise Wi-Fi, IP cameras, IP phones, and network-connected devices.',
-      'Configured and validated Cisco switches and routers for basic setup, VLAN mapping, and connectivity testing; supported Juniper Wi-Fi AP deployments and network troubleshooting.',
-      'Monitored connectivity incidents and performed first-line troubleshooting including AP restarts, DHCP verification, and wired vs. wireless isolation; escalated unresolved incidents to Tier 2 with full logs.',
+      'Supported deployment, validation, and connectivity checks for 100+ endpoints and access points, including enterprise Wi-Fi, IP cameras (with VLAN assignment), IP phones, and network-connected devices.',
+      'Configured and supported Cisco Unified Communications Manager (CUCM) IP phones and analog telephony endpoints.',
+      'Configured and validated Cisco switches and routers for basic setup, VLAN mapping, and connectivity testing; supported Juniper Wi-Fi AP deployments and Nokia carrier-grade network infrastructure validation.',
+      'Provided Tier 1 / L1 NOC monitoring and frontline support in a 24/7 operations environment — monitored WLAN and Internet connectivity incidents, assessed user impact, and ensured SLA-aligned first response.',
+      'Performed first-line troubleshooting including AP restarts, DHCP verification, and wired vs. wireless isolation; escalated unresolved incidents to Tier 2 with complete findings and logs.',
+      'Performed remote server administration via virtual machines; executed server updates, patching, restarts, and service validation during approved maintenance windows.',
       'Supported controlled maintenance activities including service restarts, validation checks, and post-change service health confirmation.',
       'Supported bidding cost estimates, quotation preparation, and material scope validation for telecom and fiber optic infrastructure works.',
       'Coordinated technical staff and supervised site ocular inspections to validate project scope, materials, and implementation requirements.',
@@ -220,6 +223,9 @@ const experience = [
       'Monitored network gateways, internal services, and infrastructure availability using Uptime Kuma and alert dashboards.',
       'Assisted in incident detection, service validation, and support for gateways, switches, servers, and internal connectivity.',
       'Performed endpoint and workstation troubleshooting including Wi-Fi, internet access, user readiness, and remote support.',
+      'Provisioned and troubleshot Windows kiosks and visitor login setups, resolving credential, device readiness, and access issues.',
+      'Set up and supported meeting room systems including Poly / VC devices, display pairing, casting, and AV troubleshooting.',
+      'Deployed and validated network printers (Canon / FollowYouPrint) including print server paths, driver configuration, and end-user acceptance testing; investigated GPO printer deployment issues and escalated with diagnostic logs.',
       'Accessed routers, switches, and servers using SecureCRT and PuTTY for validation and basic support tasks.',
       'Supported endpoint security operations using Sophos Endpoint and Microsoft Defender.',
       'Used virtual machines for testing, patching, and controlled troubleshooting.',
@@ -264,7 +270,7 @@ const clients = [
 const projects = [
   {
     title: 'BALCITA Fiber Optics — Field Deployments',
-    desc: 'Led end-to-end field deployments across enterprise and data center environments. Work includes Juniper AP63 and HPE Aruba wireless access point installations, fiber optic ODF and patch panel termination, Fluke and Anritsu MT9083 OTDR acceptance testing, and the NIR Backbone and WLAN Deployment site assessment for Equinix (MN1 and MN2 sites, August 2025).',
+    desc: 'End-to-end field deployments across 9 enterprise clients spanning banking, healthcare, telecom, and data center environments. Commissioned 100+ endpoints per engagement — Wi-Fi APs, IP cameras, IP phones, and network devices. Delivered Juniper AP63 and HPE Aruba WLAN deployments, fiber ODF and patch panel termination, Fluke and Anritsu MT9083 OTDR acceptance testing, and site assessment for Equinix MN1/MN2 NIR Backbone (August 2025).',
     images: [balcitaLogo],
     tags: ['Juniper AP63', 'HPE Aruba', 'WLAN Deployment', 'OTDR Testing', 'Fluke', 'Fiber ODF', 'Equinix', 'Site Assessment'],
     live: null,
@@ -272,16 +278,16 @@ const projects = [
   },
   {
     title: 'BALCITA Fiber Optics — Company Website',
-    desc: 'Designed and developed the company website from scratch using Angular 21, TypeScript, HTML5, and CSS3. Built multiple pages including Home, About, Services, Portfolio, Clients, Team, and Contact. Deployed on Netlify with continuous deployment connected to GitHub.',
+    desc: 'Designed and developed an 8-page company website from scratch using Angular 21, TypeScript, HTML5, and CSS3. Pages include Home, About, Services, Portfolio, Clients, Team, and Contact. Deployed on Netlify with CI/CD connected to GitHub — automatic builds on every push.',
     images: [balcitaLogo],
     tags: ['Angular 21', 'TypeScript', 'HTML5', 'CSS3', 'Netlify', 'GitHub'],
     live: 'https://balcita-fiberoptics.netlify.app/home',
-    github: null,
+    github: 'https://github.com/Lycheegrr',
   },
   {
     title: 'ReceiptCo Mobile App',
     award: 'Best Research in Science and Technology, LPU 18th Annual Best Student Research Forum, March 10, 2025 · Accepted for Oral Presentation, Asian Graduate Studies Summit 2025 (A-GRASS 2025), Ho Chi Minh City, Vietnam, May 21-24, 2025',
-    desc: 'BS Thesis, a monitoring mobile app for financial management with receipt scanner using Optical Character Recognition (OCR). Selected to represent the College of Technology at the LPU Annual Best Student Research Forum, and accepted for Oral Presentation at the Asian Graduate Studies Summit 2025 in Ho Chi Minh City, Vietnam.',
+    desc: 'BS Thesis — a 3-person team mobile app for financial management with a receipt scanner powered by Optical Character Recognition (OCR). Selected to represent the College of Technology at the LPU Annual Best Student Research Forum, and accepted for Oral Presentation at the Asian Graduate Studies Summit 2025 in Ho Chi Minh City, Vietnam.',
     team: 'Marc Joseph G. Balcita · Mathew A. Dela Cruz · Joseph Andrian O. Mabalot',
     images: [receiptCert, receiptInvite],
     tags: ['Mobile App', 'OCR', 'Financial Management', 'Thesis', 'LPU College of Technology'],
@@ -370,7 +376,27 @@ const training = [
     label: 'Network Engineer – CCNA Bootcamp (Hands-On Training)',
     org: 'Rivan IT / RivanCyber Training Institute',
     date: 'Sep 2025',
-    detail: 'LAN/WAN topology setup, VLANs and trunking, OSPF and EIGRP fundamentals, subnetting, IP tools and diagnostics, ACL basics, wireless fundamentals, and simulated WAN validation.',
+    bullets: [
+      'Designed, configured, and troubleshot enterprise LAN/WAN topologies using Cisco routers and switches.',
+      'Implemented VLANs, 802.1Q trunking, inter-VLAN routing, and STP fundamentals.',
+      'Configured static routing and dynamic routing protocols including OSPF and EIGRP.',
+      'Performed IP addressing, VLSM subnetting, and network documentation aligned with enterprise standards.',
+      'Applied security fundamentals including port security, ACL configuration, and network segmentation.',
+      'Conducted diagnostics using Cisco CLI tools — ping, traceroute, interface and routing table verification.',
+      'Simulated production WAN scenarios including ISP handoff concepts and service validation.',
+      'Worked with CUCM fundamentals, IP phones, voice VLANs, and basic call-flow validation.',
+    ],
+  },
+  {
+    label: 'Foundational Training & Coursework',
+    org: 'Cisco NetAcad / LPU / Self-Study',
+    date: '2020 – 2024',
+    bullets: [
+      'Networking: Network Support and Security, Network Addressing & Basic Troubleshooting, Networking Devices & Initial Configuration, Networking Basics & Foundations, Network Technician Career Path.',
+      'Programming: Introduction to Python, Programming in C.',
+      'Certifications & Assessments: MTA 98-388 – Microsoft Java Fundamentals, IC3 GS5 – Computing Fundamentals.',
+      'Language Proficiency: TOEIC – Test of English for International Communication.',
+    ],
   },
 ]
 
@@ -678,10 +704,16 @@ function App() {
             <div className="training-item" key={t.label}>
               <div className="training-header">
                 <span className="training-label">{t.label}</span>
-                <span className="cert-detail">{t.date}</span>
+                {t.date && <span className="cert-detail">{t.date}</span>}
               </div>
               <span className="training-org">{t.org}</span>
-              <p className="training-detail">{t.detail}</p>
+              {t.bullets ? (
+                <ul className="training-bullets">
+                  {t.bullets.map((b, i) => <li key={i}>{b}</li>)}
+                </ul>
+              ) : (
+                <p className="training-detail">{t.detail}</p>
+              )}
             </div>
           ))}
         </div>
