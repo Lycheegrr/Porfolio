@@ -134,6 +134,28 @@ const INDUSTRY_ICONS = {
   ),
 }
 
+const LogoMark = () => (
+  <svg viewBox="0 0 56 38" width="52" height="34" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    {/* Hard hat dome */}
+    <path d="M 5,17 A 8,6 0 0 1 21,17" />
+    {/* Hard hat brim */}
+    <line x1="3" y1="17" x2="23" y2="17" />
+    {/* Head */}
+    <circle cx="13" cy="22.5" r="3.5" />
+    {/* Shoulders */}
+    <path d="M 3,37 Q 7,29 10.5,28 Q 13,27.2 15.5,28 Q 19,29 25,37" />
+    {/* Gear — 6-tooth star polygon centered at (24, 30) */}
+    <polygon points="29.5,30 27.3,31.9 26.8,34.8 24,33.8 21.2,34.8 20.7,31.9 18.5,30 20.7,28.1 21.2,25.2 24,26.2 26.8,25.2 27.3,28.1" />
+    <circle cx="24" cy="30" r="2" />
+    {/* Globe centered at (44, 17) */}
+    <circle cx="44" cy="17" r="9" />
+    <ellipse cx="44" cy="17" rx="3.5" ry="9" />
+    <line x1="35" y1="17" x2="53" y2="17" />
+    <path d="M 37,11 Q 44,8 51,11" />
+    <path d="M 37,23 Q 44,26 51,23" />
+  </svg>
+)
+
 // ===== Hooks =====
 function useActiveSection(ids) {
   const [active, setActive] = useState('')
@@ -258,7 +280,7 @@ const experience = [
     period: 'Jan 2023 – Present',
     sub: 'Project-Based / Site Deployment | Subcontractor -TechConnect I.T. Solutions',
     note: 'Field & site-based engagement with flexible scheduling -ran concurrently with university studies and OJT (2023–2024).',
-    clients: 'St. Luke\'s Medical Center (QC & BGC), Bangko Sentral ng Pilipinas, San Miguel Corporation, Procter & Gamble, OKADA Manila, PLDT Vitro (Makati & Pasig), Equinix, Manila Water, TIM',
+    clients: null,
     bullets: [
       'Delivered enterprise fiber backbone termination, fusion splicing, and structured cabling across multiple sites, including hospitals, data centers, and corporate environments.',
       'Performed OTDR (SM/MM), Fluke copper/fiber, LinkWare, and Anritsu testing for commissioning, troubleshooting, and client acceptance.',
@@ -318,29 +340,29 @@ const experience = [
 
 const stats = [
   { value: '3+', label: 'Years Experience' },
-  { value: '9+', label: 'Enterprise Clients' },
+  { value: '9+', label: 'Industry Sectors' },
   { value: '100+', label: 'Endpoints per Engagement' },
   { value: 'CCNA', label: 'Cisco Certified' },
 ]
 
 const clients = [
-  { name: 'Bangko Sentral ng Pilipinas', industry: 'Banking & Finance' },
-  { name: 'Equinix', industry: 'Data Center' },
-  { name: 'St. Luke\'s Medical Center', industry: 'Healthcare' },
-  { name: 'San Miguel Corporation', industry: 'FMCG / Conglomerate' },
-  { name: 'Procter & Gamble', industry: 'FMCG' },
-  { name: 'PLDT Vitro', industry: 'Telecommunications' },
-  { name: 'OKADA Manila', industry: 'Entertainment & Integrated Resort' },
-  { name: 'Manila Water', industry: 'Utilities' },
-  { name: 'Total Information Management (TIM)', industry: 'IT Services' },
+  { name: 'Financial Institution', industry: 'Banking & Finance' },
+  { name: 'Co-location Data Center', industry: 'Data Center' },
+  { name: 'Multi-Campus Hospital System', industry: 'Healthcare' },
+  { name: 'Philippine Conglomerate', industry: 'FMCG / Conglomerate' },
+  { name: 'Global Consumer Goods Firm', industry: 'FMCG' },
+  { name: 'National Telco Provider', industry: 'Telecommunications' },
+  { name: 'Integrated Resort & Casino', industry: 'Entertainment & Integrated Resort' },
+  { name: 'National Water Utility', industry: 'Utilities' },
+  { name: 'Managed IT Services Provider', industry: 'IT Services' },
 ]
 
 const projects = [
   {
     title: 'BALCITA Fiber Optics -Field Deployments',
-    desc: 'End-to-end field deployments across 9 enterprise clients spanning banking, healthcare, telecom, and data center environments. Commissioned 100+ endpoints per engagement -Wi-Fi APs, IP cameras, IP phones, and network devices. Delivered Juniper AP63 and HPE Aruba WLAN deployments, fiber ODF and patch panel termination, Fluke and Anritsu MT9083 OTDR acceptance testing, and site assessment for Equinix MN1/MN2 NIR Backbone (August 2025).',
+    desc: 'End-to-end field deployments across 9 enterprise sites spanning banking, healthcare, telecommunications, and data center environments. Commissioned 100+ endpoints per engagement — Wi-Fi APs, IP cameras, IP phones, and network devices. Delivered Juniper AP63 and HPE Aruba WLAN deployments, fiber ODF and patch panel termination, Fluke and Anritsu MT9083 OTDR acceptance testing, and co-location data center site assessment.',
     images: [balcitaScreenshot],
-    tags: ['Juniper AP63', 'HPE Aruba', 'WLAN Deployment', 'OTDR Testing', 'Fluke', 'Fiber ODF', 'Equinix', 'Site Assessment'],
+    tags: ['Juniper AP63', 'HPE Aruba', 'WLAN Deployment', 'OTDR Testing', 'Fluke', 'Fiber ODF', 'Co-location DC', 'Site Assessment'],
     live: null,
     github: null,
   },
@@ -491,7 +513,7 @@ const NAV_LINKS = [
   { href: '#services', label: 'Services' },
   { href: '#about', label: 'About' },
   { href: '#experience', label: 'Experience' },
-  { href: '#clients', label: 'Clients' },
+  { href: '#clients', label: 'Industries' },
   { href: '#projects', label: 'Projects' },
   { href: '#skills', label: 'Skills' },
   { href: '#contact', label: 'Contact' },
@@ -649,9 +671,9 @@ function App() {
             <p>
               Experienced in Cisco routing and switching, VLAN configuration, OSPF, EIGRP, Palo Alto
               firewall management, GlobalProtect VPN deployment, IDS/IPS monitoring, and structured
-              incident and change management. Delivered multi-site infrastructure for clients including
-              Bangko Sentral ng Pilipinas, Equinix, PLDT Vitro, St. Luke's Medical Center BGC, and
-              San Miguel Corporation across Luzon, Visayas, and Mindanao.
+              incident and change management. Delivered multi-site infrastructure across banking,
+              data center, healthcare, telecommunications, and FMCG environments spanning Luzon,
+              Visayas, and Mindanao.
             </p>
             <p>
               Started working in enterprise network environments in 2023 while concurrently completing
@@ -699,8 +721,8 @@ function App() {
       </FadeIn>
 
       <FadeIn tag="section" id="clients">
-        <h2>Enterprise Clients</h2>
-        <p className="clients-sub">Environments I've deployed, configured, and supported across Luzon, Visayas &amp; Mindanao</p>
+        <h2>Industries Served</h2>
+        <p className="clients-sub">Sectors and environments I've deployed, configured, and supported across Luzon, Visayas &amp; Mindanao</p>
         <div className="clients-grid">
           {clients.map((c) => {
             const IndustryIcon = INDUSTRY_ICONS[c.industry]
