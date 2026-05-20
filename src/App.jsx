@@ -272,8 +272,8 @@ const projects = [
   },
   {
     title: 'ReceiptCo Mobile App',
-    award: 'Best Research in Science and Technology — LPU 18th Annual Best Student Research Forum, March 10, 2025',
-    desc: 'BS Thesis — a monitoring mobile app for financial management with receipt scanner using Optical Character Recognition (OCR). Selected to represent the College of Technology at the LPU Annual Best Student Research Forum.',
+    award: 'Best Research in Science and Technology — LPU 18th Annual Best Student Research Forum, March 10, 2025 · Accepted for Oral Presentation — Asian Graduate Studies Summit 2025 (A-GRASS 2025), Ho Chi Minh City, Vietnam, May 21–24, 2025',
+    desc: 'BS Thesis — a monitoring mobile app for financial management with receipt scanner using Optical Character Recognition (OCR). Selected to represent the College of Technology at the LPU Annual Best Student Research Forum, and accepted for Oral Presentation at the Asian Graduate Studies Summit 2025 in Ho Chi Minh City, Vietnam.',
     team: 'Marc Joseph G. Balcita · Mathew A. Dela Cruz · Joseph Andrian O. Mabalot',
     images: [receiptCert, receiptInvite],
     tags: ['Mobile App', 'OCR', 'Financial Management', 'Thesis', 'LPU College of Technology'],
