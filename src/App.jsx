@@ -534,12 +534,12 @@ function App() {
             </p>
             <p>
               Started working in enterprise network environments in 2023 while concurrently completing
-              a BS in Information Technology — demonstrating the ability to apply academic learning
+              a BS in Information Technology, demonstrating the ability to apply academic learning
               directly in live production settings from early in my career.
             </p>
             <div className="about-edu">
               <span className="edu-degree">BS Information Technology (Information Security)</span>
-              <span className="edu-school">Lyceum of the Philippines University — Sep 2020 – Sep 2024</span>
+              <span className="edu-school">Lyceum of the Philippines University, Sep 2020 - Sep 2024</span>
               <span className="edu-note">Working in enterprise environments from Jan 2023 while completing degree</span>
             </div>
             <a href="#" className="btn btn-primary" download>Download Resume</a>
