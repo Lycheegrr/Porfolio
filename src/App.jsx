@@ -192,8 +192,8 @@ const experience = [
     companyLogo: balcitaIcon,
     role: 'Network & Infrastructure Engineer',
     period: 'Jan 2023 – Present',
-    sub: 'Project-Based / Site Deployment | Subcontractor — TechConnect I.T. Solutions',
-    note: 'Field & site-based engagement with flexible scheduling — ran concurrently with university studies and OJT (2023–2024).',
+    sub: 'Project-Based / Site Deployment | Subcontractor -TechConnect I.T. Solutions',
+    note: 'Field & site-based engagement with flexible scheduling -ran concurrently with university studies and OJT (2023–2024).',
     clients: 'St. Luke\'s Medical Center (QC & BGC), Bangko Sentral ng Pilipinas, San Miguel Corporation, Procter & Gamble, OKADA Manila, PLDT Vitro (Makati & Pasig), Equinix, Manila Water, TIM',
     bullets: [
       'Delivered enterprise fiber backbone termination, fusion splicing, and structured cabling across multiple sites, including hospitals, data centers, and corporate environments.',
@@ -203,7 +203,7 @@ const experience = [
       'Supported deployment, validation, and connectivity checks for 100+ endpoints and access points, including enterprise Wi-Fi, IP cameras (with VLAN assignment), IP phones, and network-connected devices.',
       'Configured and supported Cisco Unified Communications Manager (CUCM) IP phones and analog telephony endpoints.',
       'Configured and validated Cisco switches and routers for basic setup, VLAN mapping, and connectivity testing; supported Juniper Wi-Fi AP deployments and Nokia carrier-grade network infrastructure validation.',
-      'Provided Tier 1 / L1 NOC monitoring and frontline support in a 24/7 operations environment — monitored WLAN and Internet connectivity incidents, assessed user impact, and ensured SLA-aligned first response.',
+      'Provided Tier 1 / L1 NOC monitoring and frontline support in a 24/7 operations environment -monitored WLAN and Internet connectivity incidents, assessed user impact, and ensured SLA-aligned first response.',
       'Performed first-line troubleshooting including AP restarts, DHCP verification, and wired vs. wireless isolation; escalated unresolved incidents to Tier 2 with complete findings and logs.',
       'Performed remote server administration via virtual machines; executed server updates, patching, restarts, and service validation during approved maintenance windows.',
       'Supported controlled maintenance activities including service restarts, validation checks, and post-change service health confirmation.',
@@ -217,7 +217,7 @@ const experience = [
     companyLogo: fujitsuLogo,
     role: 'IT Infrastructure and Systems Support Intern',
     period: 'Nov 2023 – Apr 2024',
-    sub: 'University OJT Internship — Digital Systems Platform Unit (DSPU)',
+    sub: 'University OJT Internship -Digital Systems Platform Unit (DSPU)',
     clients: null,
     note: 'Completed as part of BS Information Technology degree requirements (Lyceum of the Philippines University), running concurrently with ongoing project-based field work.',
     bullets: [
@@ -236,16 +236,16 @@ const experience = [
   {
     company: 'BALCITA Fiber Optic Installation Services',
     companyLogo: balcitaIcon,
-    role: 'Web Developer — In-House Project',
+    role: 'Web Developer -In-House Project',
     period: '2026',
     sub: 'Internal Web Development',
     clients: null,
     note: null,
     bullets: [
-      'Designed and developed an 8-page company SPA from scratch using Angular 21 (Standalone Components), TypeScript 5.9, RxJS, HTML5, and CSS3 — pages include Home, About, Services, Portfolio, Clients, Team, and Contact.',
+      'Designed and developed an 8-page company SPA from scratch using Angular 21 (Standalone Components), TypeScript 5.9, RxJS, HTML5, and CSS3 -pages include Home, About, Services, Portfolio, Clients, Team, and Contact.',
       'Built a serverless backend using Node.js and Netlify Functions; integrated Nodemailer for automated transactional email and Netlify Forms for form submission handling.',
       'Implemented responsive, mobile-first layouts with 3D CSS animations, inline SVG icons, and cross-browser compatibility.',
-      'Deployed on Netlify with CI/CD connected to GitHub — automatic production builds on every push.',
+      'Deployed on Netlify with CI/CD connected to GitHub -automatic production builds on every push.',
       'Wrote unit tests with Vitest and enforced code formatting with Prettier throughout the project.',
       'Managed full version control using Git and GitHub, maintaining clean commit history and structured project organization.',
     ],
@@ -273,24 +273,24 @@ const clients = [
 
 const projects = [
   {
-    title: 'BALCITA Fiber Optics — Field Deployments',
-    desc: 'End-to-end field deployments across 9 enterprise clients spanning banking, healthcare, telecom, and data center environments. Commissioned 100+ endpoints per engagement — Wi-Fi APs, IP cameras, IP phones, and network devices. Delivered Juniper AP63 and HPE Aruba WLAN deployments, fiber ODF and patch panel termination, Fluke and Anritsu MT9083 OTDR acceptance testing, and site assessment for Equinix MN1/MN2 NIR Backbone (August 2025).',
+    title: 'BALCITA Fiber Optics -Field Deployments',
+    desc: 'End-to-end field deployments across 9 enterprise clients spanning banking, healthcare, telecom, and data center environments. Commissioned 100+ endpoints per engagement -Wi-Fi APs, IP cameras, IP phones, and network devices. Delivered Juniper AP63 and HPE Aruba WLAN deployments, fiber ODF and patch panel termination, Fluke and Anritsu MT9083 OTDR acceptance testing, and site assessment for Equinix MN1/MN2 NIR Backbone (August 2025).',
     images: [balcitaScreenshot],
     tags: ['Juniper AP63', 'HPE Aruba', 'WLAN Deployment', 'OTDR Testing', 'Fluke', 'Fiber ODF', 'Equinix', 'Site Assessment'],
     live: null,
     github: null,
   },
   {
-    title: 'BALCITA Fiber Optics — Company Website',
+    title: 'BALCITA Fiber Optics -Company Website',
     desc: 'Designed and developed an 8-page company SPA using Angular 21 (Standalone Components), TypeScript 5.9, RxJS, Node.js, and Netlify Functions. Features a serverless backend with Nodemailer for transactional email and Netlify Forms for form handling, 3D CSS animations, inline SVG icons, and a mobile-first responsive layout. Deployed on Netlify with CI/CD connected to GitHub.',
     images: [balcitaScreenshot],
-    tags: ['Angular 21', 'TypeScript 5.9', 'RxJS', 'Node.js', 'Netlify Functions', 'Nodemailer', 'HTML5 / CSS3', 'Vitest', 'Netlify CI/CD', 'GitHub'],
+    tags: ['Angular 21', 'TypeScript', 'Node.js', 'Netlify Functions', 'HTML5 / CSS3', 'GitHub CI/CD'],
     live: 'https://balcita-fiberoptics.netlify.app/home',
     github: null,
   },
   {
     title: 'Personal Portfolio Website',
-    desc: 'Designed and built this single-page portfolio from scratch using React 19 and Vite 8 — no UI library. Implemented custom hooks for IntersectionObserver scroll-triggered animations, a typewriter effect, animated stat counters with easing curves, an image lightbox with keyboard support, and an EmailJS dual-send contact form (notification + auto-reply). Fully responsive with hamburger navigation and prefers-reduced-motion accessibility support.',
+    desc: 'Designed and built this single-page portfolio from scratch using React 19 and Vite 8 -no UI library. Implemented custom hooks for IntersectionObserver scroll-triggered animations, a typewriter effect, animated stat counters with easing curves, an image lightbox with keyboard support, and an EmailJS dual-send contact form (notification + auto-reply). Fully responsive with hamburger navigation and prefers-reduced-motion accessibility support.',
     images: null,
     tags: ['React 19', 'Vite 8', 'EmailJS', 'IntersectionObserver', 'CSS Animations', 'Responsive Design'],
     live: null,
@@ -299,10 +299,10 @@ const projects = [
   {
     title: 'ReceiptCo Mobile App',
     award: 'Best Research in Science and Technology, LPU 18th Annual Best Student Research Forum, March 10, 2025 · Accepted for Oral Presentation, Asian Graduate Studies Summit 2025 (A-GRASS 2025), Ho Chi Minh City, Vietnam, May 21-24, 2025',
-    desc: 'BS Thesis — a 3-person team mobile app for financial management with a receipt scanner powered by Optical Character Recognition (OCR). Selected to represent the College of Technology at the LPU Annual Best Student Research Forum, and accepted for Oral Presentation at the Asian Graduate Studies Summit 2025 in Ho Chi Minh City, Vietnam.',
+    desc: 'BS Thesis -a 3-person team mobile app for financial management with a receipt scanner powered by Optical Character Recognition (OCR) and backed by Firebase (Firestore, Authentication, Storage). Selected to represent the College of Technology at the LPU Annual Best Student Research Forum, and accepted for Oral Presentation at the Asian Graduate Studies Summit 2025 in Ho Chi Minh City, Vietnam.',
     team: 'Marc Joseph G. Balcita · Mathew A. Dela Cruz · Joseph Andrian O. Mabalot',
     images: [receiptCert, receiptInvite],
-    tags: ['Mobile App', 'OCR', 'Financial Management', 'Thesis', 'LPU College of Technology'],
+    tags: ['Mobile App', 'OCR', 'Firebase', 'Firestore', 'Financial Management', 'Thesis', 'LPU College of Technology'],
     live: null,
     github: null,
   },
@@ -347,7 +347,7 @@ const skillCategories = [
   },
   {
     label: 'Backend & Serverless',
-    skills: ['Node.js', 'Netlify Functions', 'Nodemailer', 'Netlify Forms', 'Vitest', 'npm'],
+    skills: ['Node.js', 'Netlify Functions', 'Nodemailer', 'Netlify Forms', 'Firebase', 'Firestore', 'Vitest', 'npm'],
   },
 ]
 
@@ -380,7 +380,7 @@ const services = [
 ]
 
 const certifications = [
-  { label: 'Best Research in Science and Technology — LPU 18th Annual Best Student Research Forum', detail: 'Certificate of Recognition, Mar 2025' },
+  { label: 'Best Research in Science and Technology -LPU 18th Annual Best Student Research Forum', detail: 'Certificate of Recognition, Mar 2025' },
   { label: 'Cisco Certified Network Associate (CCNA)', detail: 'Active' },
   { label: 'Fiber Optic Termination and Testing', detail: 'Training Certification' },
   { label: 'Fluke Networks Copper and Fiber Testing', detail: 'Training Certification' },
@@ -398,7 +398,7 @@ const training = [
       'Configured static routing and dynamic routing protocols including OSPF and EIGRP.',
       'Performed IP addressing, VLSM subnetting, and network documentation aligned with enterprise standards.',
       'Applied security fundamentals including port security, ACL configuration, and network segmentation.',
-      'Conducted diagnostics using Cisco CLI tools — ping, traceroute, interface and routing table verification.',
+      'Conducted diagnostics using Cisco CLI tools -ping, traceroute, interface and routing table verification.',
       'Simulated production WAN scenarios including ISP handoff concepts and service validation.',
       'Worked with CUCM fundamentals, IP phones, voice VLANs, and basic call-flow validation.',
     ],
@@ -438,7 +438,8 @@ function App() {
   const [showTop, setShowTop] = useState(false)
   const [formState, setFormState] = useState('idle') // 'idle' | 'sending' | 'sent' | 'error'
   const [lightbox, setLightbox] = useState(null)
-  const active = useActiveSection(['services', 'about', 'experience', 'clients', 'projects', 'skills', 'contact'])
+  const [flippedCard, setFlippedCard] = useState(null)
+  const active = useActiveSection(['services', 'about', 'experience', 'clients', 'projects', 'skills', 'roadmap', 'contact'])
   const typedRole = useTypewriter(HERO_ROLES)
   const menuRef = useRef(null)
   const formRef = useRef(null)
@@ -531,7 +532,7 @@ function App() {
             <span className="cursor" aria-hidden="true" />
           </p>
           <p className="hero-sub">
-            NOC &amp; Infrastructure Operations — 3+ years delivering enterprise network design,
+            NOC &amp; Infrastructure Operations -3+ years delivering enterprise network design,
             security, and multi-site deployments across banking, healthcare, telecom, and data center environments.
           </p>
           <div className="hero-actions">
@@ -644,44 +645,62 @@ function App() {
         <h2>Projects</h2>
         <div className="projects-grid">
           {projects.map((project) => (
-            <div className="project-card" key={project.title}>
-              {project.images ? (
-                <div className="project-img-gallery">
-                  {project.images.map((img, i) => (
-                    <img
-                      key={i}
-                      src={img}
-                      alt={`${project.title} ${i + 1}`}
-                      className="project-gallery-img"
-                      loading="lazy"
-                      onClick={() => openLightbox(img, `${project.title} ${i + 1}`)}
-                    />
-                  ))}
-                </div>
-              ) : (
-                <div className="project-img-placeholder">Preview</div>
-              )}
-              <div className="project-info">
-                {project.award && (
-                  <div className="project-award">
-                    <span className="award-icon">🏆</span>
-                    {project.award}
+            <div
+              className={`project-flip${flippedCard === project.title ? ' flipped' : ''}`}
+              key={project.title}
+              onClick={() => setFlippedCard(flippedCard === project.title ? null : project.title)}
+            >
+              <div className="project-flip-inner">
+
+                <div className="project-card">
+                  {project.images ? (
+                    <div className="project-img-gallery">
+                      {project.images.map((img, i) => (
+                        <img
+                          key={i}
+                          src={img}
+                          alt={`${project.title} ${i + 1}`}
+                          className="project-gallery-img"
+                          loading="lazy"
+                          onClick={(e) => { e.stopPropagation(); openLightbox(img, `${project.title} ${i + 1}`) }}
+                        />
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="project-img-placeholder">Preview</div>
+                  )}
+                  <div className="project-info">
+                    <h3>{project.title}</h3>
+                    <div className="project-tags">
+                      {project.tags.map((tag) => <span className="tag" key={tag}>{tag}</span>)}
+                    </div>
                   </div>
-                )}
-                <h3>{project.title}</h3>
-                <p>{project.desc}</p>
-                {project.team && <p className="project-team">{project.team}</p>}
-                <div className="project-tags">
-                  {project.tags.map((tag) => <span className="tag" key={tag}>{tag}</span>)}
+                  <p className="flip-hint">Click to view description</p>
                 </div>
-                <div className="project-links">
-                  {project.live && (
-                    <a href={project.live} className="btn btn-sm btn-primary" target="_blank" rel="noreferrer">Live Site</a>
+
+                <div className="project-back">
+                  {project.award && (
+                    <div className="project-award">
+                      <span className="award-icon">🏆</span>
+                      {project.award}
+                    </div>
                   )}
-                  {project.github && (
-                    <a href={project.github} className="btn btn-sm btn-outline" target="_blank" rel="noreferrer">GitHub</a>
+                  <h3>{project.title}</h3>
+                  <p className="project-back-desc">{project.desc}</p>
+                  {project.team && <p className="project-team">{project.team}</p>}
+                  {(project.live || project.github) && (
+                    <div className="project-links" onClick={(e) => e.stopPropagation()}>
+                      {project.live && (
+                        <a href={project.live} className="btn btn-sm btn-primary" target="_blank" rel="noreferrer">Live Site</a>
+                      )}
+                      {project.github && (
+                        <a href={project.github} className="btn btn-sm btn-outline" target="_blank" rel="noreferrer">GitHub</a>
+                      )}
+                    </div>
                   )}
+                  <p className="flip-back-hint">Click anywhere to flip back</p>
                 </div>
+
               </div>
             </div>
           ))}
@@ -751,7 +770,7 @@ function App() {
         </form>
         {formState === 'sent' && (
           <p className="form-feedback form-success">
-            Message sent! Check your inbox — a confirmation has been sent to you. I'll be in touch shortly.
+            Message sent! Check your inbox -a confirmation has been sent to you. I'll be in touch shortly.
           </p>
         )}
         {formState === 'error' && (
