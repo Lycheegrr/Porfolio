@@ -242,6 +242,7 @@ h2::after {
   color: var(--text-muted);
   font-size: 0.88rem;
   line-height: 1.6;
+  text-align: justify;
 }
 
 /* ===== Stats Bar ===== */
@@ -359,7 +360,7 @@ h2::after {
   display: block;
   box-shadow: 0 0 32px rgba(0, 212, 255, 0.25);
 }
-.about-text p { color: var(--text-muted); margin-bottom: 16px; }
+.about-text p { color: var(--text-muted); margin-bottom: 16px; text-align: justify; }
 .about-edu {
   display: flex;
   flex-direction: column;
@@ -458,6 +459,7 @@ h2::after {
   padding-left: 18px;
   position: relative;
   line-height: 1.6;
+  text-align: justify;
 }
 .exp-bullets li::before {
   content: '▸';
@@ -529,7 +531,7 @@ h2::after {
 
 .project-info { padding: 20px; }
 .project-info h3 { font-size: 1.1rem; margin-bottom: 8px; }
-.project-info p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px; }
+.project-info p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px; text-align: justify; }
 .project-award {
   display: flex;
   align-items: flex-start;
