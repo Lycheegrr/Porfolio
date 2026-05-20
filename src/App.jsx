@@ -70,6 +70,70 @@ const IconGitHub = () => (
   </svg>
 )
 
+const IconMail = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
+    <rect x="2" y="4" width="20" height="16" rx="2" />
+    <polyline points="2 7 12 13 22 7" />
+  </svg>
+)
+
+const INDUSTRY_ICONS = {
+  'Banking & Finance': () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+      <polyline points="3 9 12 3 21 9" /><line x1="3" y1="9" x2="21" y2="9" />
+      <line x1="5" y1="9" x2="5" y2="20" /><line x1="12" y1="9" x2="12" y2="20" /><line x1="19" y1="9" x2="19" y2="20" />
+      <line x1="2" y1="20" x2="22" y2="20" />
+    </svg>
+  ),
+  'Data Center': () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="3" width="20" height="7" rx="1" /><rect x="2" y="14" width="20" height="7" rx="1" />
+      <circle cx="18" cy="6.5" r="1" fill="currentColor" stroke="none" /><circle cx="18" cy="17.5" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  ),
+  'Healthcare': () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+      <rect x="3" y="3" width="18" height="18" rx="2" />
+      <line x1="12" y1="8" x2="12" y2="16" /><line x1="8" y1="12" x2="16" y2="12" />
+    </svg>
+  ),
+  'FMCG / Conglomerate': () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="11" width="5" height="10" /><rect x="9.5" y="6" width="5" height="15" /><rect x="17" y="14" width="5" height="7" />
+      <line x1="1" y1="21" x2="23" y2="21" />
+    </svg>
+  ),
+  'FMCG': () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="11" width="5" height="10" /><rect x="9.5" y="6" width="5" height="15" /><rect x="17" y="14" width="5" height="7" />
+      <line x1="1" y1="21" x2="23" y2="21" />
+    </svg>
+  ),
+  'Telecommunications': () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+      <path d="M4.5 19.5 A10.6 10.6 0 0 1 19.5 4.5" /><path d="M7.5 16.5 A7.5 7.5 0 0 1 16.5 7.5" />
+      <path d="M10.5 13.5 A4.2 4.2 0 0 1 13.5 10.5" />
+      <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none" />
+    </svg>
+  ),
+  'Entertainment & Integrated Resort': () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26" />
+    </svg>
+  ),
+  'Utilities': () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2C12 2 5 10 5 14a7 7 0 0014 0C19 10 12 2 12 2z" />
+    </svg>
+  ),
+  'IT Services': () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="3" />
+      <path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" />
+    </svg>
+  ),
+}
+
 // ===== Hooks =====
 function useActiveSection(ids) {
   const [active, setActive] = useState('')
@@ -436,6 +500,7 @@ const NAV_LINKS = [
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [showTop, setShowTop] = useState(false)
+  const [scrollProgress, setScrollProgress] = useState(0)
   const [formState, setFormState] = useState('idle') // 'idle' | 'sending' | 'sent' | 'error'
   const [lightbox, setLightbox] = useState(null)
   const [flippedCard, setFlippedCard] = useState(null)
@@ -449,7 +514,11 @@ function App() {
   const closeLightbox = () => setLightbox(null)
 
   useEffect(() => {
-    const onScroll = () => setShowTop(window.scrollY > 500)
+    const onScroll = () => {
+      setShowTop(window.scrollY > 500)
+      const total = document.documentElement.scrollHeight - window.innerHeight
+      setScrollProgress(total > 0 ? (window.scrollY / total) * 100 : 0)
+    }
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -498,6 +567,7 @@ function App() {
 
   return (
     <>
+      <div className="scroll-progress" style={{ width: `${scrollProgress}%` }} aria-hidden="true" />
       <nav className="navbar" ref={menuRef}>
         <span className="nav-logo">Marc J. Balcita</span>
         <ul className={`nav-links${menuOpen ? ' open' : ''}`}>
@@ -632,12 +702,16 @@ function App() {
         <h2>Enterprise Clients</h2>
         <p className="clients-sub">Environments I've deployed, configured, and supported across Luzon, Visayas &amp; Mindanao</p>
         <div className="clients-grid">
-          {clients.map((c) => (
-            <div className="client-card" key={c.name}>
-              <span className="client-name">{c.name}</span>
-              <span className="client-industry">{c.industry}</span>
-            </div>
-          ))}
+          {clients.map((c) => {
+            const IndustryIcon = INDUSTRY_ICONS[c.industry]
+            return (
+              <div className="client-card" key={c.name}>
+                {IndustryIcon && <span className="client-icon"><IndustryIcon /></span>}
+                <span className="client-name">{c.name}</span>
+                <span className="client-industry">{c.industry}</span>
+              </div>
+            )
+          })}
         </div>
       </FadeIn>
 
@@ -792,7 +866,23 @@ function App() {
       </FadeIn>
 
       <footer>
-        <p>Built by Marc Joseph G. Balcita &copy; {new Date().getFullYear()}</p>
+        <div className="footer-content">
+          <div className="footer-brand">
+            <span className="footer-logo">Marc J. Balcita</span>
+            <p className="footer-tagline">IT Network Engineer · CCNA Certified</p>
+          </div>
+          <nav className="footer-nav" aria-label="Footer navigation">
+            {NAV_LINKS.map(({ href, label }) => (
+              <a key={href} href={href}>{label}</a>
+            ))}
+          </nav>
+          <div className="footer-social">
+            <a href="https://linkedin.com/in/marc-joseph-balcita-95b528284" target="_blank" rel="noreferrer" aria-label="LinkedIn"><IconLinkedIn /></a>
+            <a href="https://github.com/Lycheegrr" target="_blank" rel="noreferrer" aria-label="GitHub"><IconGitHub /></a>
+            <a href="mailto:mjbalcitaa@gmail.com" aria-label="Email"><IconMail /></a>
+          </div>
+        </div>
+        <p className="footer-copy">&copy; {new Date().getFullYear()} Marc Joseph G. Balcita. All rights reserved.</p>
       </footer>
 
       <button
