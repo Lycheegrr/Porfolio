@@ -378,10 +378,16 @@ const NAV_LINKS = [
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [showTop, setShowTop] = useState(false)
+  const [formState, setFormState] = useState('idle') // 'idle' | 'sending' | 'sent' | 'error'
+  const [lightbox, setLightbox] = useState(null)
   const active = useActiveSection(['services', 'about', 'experience', 'clients', 'projects', 'skills', 'contact'])
   const typedRole = useTypewriter(HERO_ROLES)
+  const menuRef = useRef(null)
+  const formRef = useRef(null)
 
   const closeMenu = () => setMenuOpen(false)
+  const openLightbox = (src, alt) => setLightbox({ src, alt })
+  const closeLightbox = () => setLightbox(null)
 
   useEffect(() => {
     const onScroll = () => setShowTop(window.scrollY > 500)
@@ -389,9 +395,39 @@ function App() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    if (!menuOpen) return
+    const handleOutside = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) closeMenu()
+    }
+    document.addEventListener('mousedown', handleOutside)
+    return () => document.removeEventListener('mousedown', handleOutside)
+  }, [menuOpen])
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setFormState('sending')
+    try {
+      const res = await fetch('https://formspree.io/f/mjbalcitaa', {
+        method: 'POST',
+        body: new FormData(e.target),
+        headers: { Accept: 'application/json' },
+      })
+      if (res.ok) { setFormState('sent'); formRef.current.reset() }
+      else setFormState('error')
+    } catch { setFormState('error') }
+  }
+
+  useEffect(() => {
+    if (!lightbox) return
+    const onKey = (e) => { if (e.key === 'Escape') closeLightbox() }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [lightbox])
+
   return (
     <>
-      <nav className="navbar">
+      <nav className="navbar" ref={menuRef}>
         <span className="nav-logo">Marc J. Balcita</span>
         <ul className={`nav-links${menuOpen ? ' open' : ''}`}>
           {NAV_LINKS.map(({ href, label }) => (
@@ -499,7 +535,7 @@ function App() {
               <div className="exp-header">
                 <div className="exp-title-block">
                   <div className="exp-company-row">
-                    {job.companyLogo && <img src={job.companyLogo} alt={job.company} className="exp-company-logo" />}
+                    {job.companyLogo && <img src={job.companyLogo} alt={job.company} className="exp-company-logo" loading="lazy" />}
                     <h3>{job.company}</h3>
                   </div>
                   <p className="exp-role">{job.role}</p>
@@ -542,7 +578,14 @@ function App() {
               {project.images ? (
                 <div className="project-img-gallery">
                   {project.images.map((img, i) => (
-                    <img key={i} src={img} alt={`${project.title} ${i + 1}`} className="project-gallery-img" />
+                    <img
+                      key={i}
+                      src={img}
+                      alt={`${project.title} ${i + 1}`}
+                      className="project-gallery-img"
+                      loading="lazy"
+                      onClick={() => openLightbox(img, `${project.title} ${i + 1}`)}
+                    />
                   ))}
                 </div>
               ) : (
@@ -622,16 +665,23 @@ function App() {
           Open to network engineering opportunities, consulting, and collaborations.
           My inbox is always open.
         </p>
-        <form
-          className="contact-form"
-          action="https://formspree.io/f/mjbalcitaa"
-          method="POST"
-        >
+        <form className="contact-form" onSubmit={handleSubmit} ref={formRef}>
           <input type="text" name="name" placeholder="Your Name" required />
           <input type="email" name="email" placeholder="Your Email" required />
           <textarea name="message" placeholder="Your Message" rows={5} required />
-          <button type="submit" className="btn btn-primary">Send Message</button>
+          <button type="submit" className="btn btn-primary" disabled={formState === 'sending'}>
+            {formState === 'sending' ? 'Sending…' : 'Send Message'}
+          </button>
         </form>
+        {formState === 'sent' && (
+          <p className="form-feedback form-success">Message sent! I'll get back to you soon.</p>
+        )}
+        {formState === 'error' && (
+          <p className="form-feedback form-error">
+            Something went wrong. Email me directly at{' '}
+            <a href="mailto:mjbalcitaa@gmail.com">mjbalcitaa@gmail.com</a>.
+          </p>
+        )}
         <div className="contact-meta">
           <span>Pateros, Metro Manila, Philippines</span>
           <span>0918 266 1465</span>
@@ -655,6 +705,18 @@ function App() {
       >
         ↑
       </button>
+
+      {lightbox && (
+        <div className="lightbox-overlay" onClick={closeLightbox} role="dialog" aria-modal="true">
+          <button className="lightbox-close" onClick={closeLightbox} aria-label="Close">✕</button>
+          <img
+            src={lightbox.src}
+            alt={lightbox.alt}
+            className="lightbox-img"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </>
   )
 }
