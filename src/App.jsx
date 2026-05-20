@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import emailjs from '@emailjs/browser'
 import './App.css'
 import profilePhoto from './assets/profile.png'
 import receiptCert from './assets/receipt-certificate.png'
@@ -365,6 +366,13 @@ const training = [
   },
 ]
 
+// ===== EmailJS Config =====
+// Replace these with your real IDs from emailjs.com dashboard
+const EMAILJS_SERVICE_ID      = 'service_jfskfli'
+const EMAILJS_NOTIFY_TEMPLATE = 'template_jp481po'
+const EMAILJS_REPLY_TEMPLATE  = 'template_7vn2yga'
+const EMAILJS_PUBLIC_KEY      = 'RRKmtH6TWKpMSgL34'
+
 const NAV_LINKS = [
   { href: '#services', label: 'Services' },
   { href: '#about', label: 'About' },
@@ -408,14 +416,26 @@ function App() {
     e.preventDefault()
     setFormState('sending')
     try {
-      const res = await fetch('https://formspree.io/f/mjbalcitaa', {
-        method: 'POST',
-        body: new FormData(e.target),
-        headers: { Accept: 'application/json' },
-      })
-      if (res.ok) { setFormState('sent'); formRef.current.reset() }
-      else setFormState('error')
-    } catch { setFormState('error') }
+      // Send notification to Marc
+      await emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_NOTIFY_TEMPLATE,
+        formRef.current,
+        EMAILJS_PUBLIC_KEY,
+      )
+      // Send auto-reply to the person who contacted
+      const data = new FormData(formRef.current)
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_REPLY_TEMPLATE,
+        { to_name: data.get('name'), to_email: data.get('email') },
+        EMAILJS_PUBLIC_KEY,
+      )
+      setFormState('sent')
+      formRef.current.reset()
+    } catch {
+      setFormState('error')
+    }
   }
 
   useEffect(() => {
@@ -674,7 +694,9 @@ function App() {
           </button>
         </form>
         {formState === 'sent' && (
-          <p className="form-feedback form-success">Message sent! I'll get back to you soon.</p>
+          <p className="form-feedback form-success">
+            Message sent! Check your inbox — a confirmation has been sent to you. I'll be in touch shortly.
+          </p>
         )}
         {formState === 'error' && (
           <p className="form-feedback form-error">
