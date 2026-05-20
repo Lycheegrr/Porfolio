@@ -1,7 +1,74 @@
 import { useState, useEffect, useRef } from 'react'
 import './App.css'
 import profilePhoto from './assets/profile.png'
+import receiptCert from './assets/receipt-certificate.png'
+import receiptInvite from './assets/receipt-invite.png'
+import balcitaLogo from './assets/balcita-logo.svg'
+import balcitaIcon from './assets/balcita-logo-icon.png'
+import fujitsuLogo from './assets/fujitsu-logo.png'
 
+// ===== SVG Icons =====
+const IconNetwork = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="4" r="2.5" />
+    <circle cx="4" cy="20" r="2.5" />
+    <circle cx="20" cy="20" r="2.5" />
+    <line x1="12" y1="6.5" x2="5.5" y2="17.5" />
+    <line x1="12" y1="6.5" x2="18.5" y2="17.5" />
+    <line x1="6.5" y1="20" x2="17.5" y2="20" />
+  </svg>
+)
+
+const IconMonitor = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="3" width="20" height="13" rx="2" />
+    <polyline points="8 21 12 17 16 21" />
+    <line x1="8" y1="21" x2="16" y2="21" />
+    <polyline points="5 9 8 12 12 9 16 12 19 9" />
+  </svg>
+)
+
+const IconFiber = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+    <path d="M3 12 C6 4, 10 4, 12 12 S18 20, 21 12" />
+    <circle cx="3" cy="12" r="1.5" fill="currentColor" stroke="none" />
+    <circle cx="21" cy="12" r="1.5" fill="currentColor" stroke="none" />
+  </svg>
+)
+
+const IconServer = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="8" rx="1.5" />
+    <rect x="2" y="14" width="20" height="8" rx="1.5" />
+    <circle cx="18" cy="6" r="1" fill="currentColor" stroke="none" />
+    <circle cx="18" cy="18" r="1" fill="currentColor" stroke="none" />
+    <line x1="6" y1="6" x2="13" y2="6" />
+    <line x1="6" y1="18" x2="13" y2="18" />
+  </svg>
+)
+
+const IconShield = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 2 L20 6 L20 12 C20 17.5 16 21.5 12 22 C8 21.5 4 17.5 4 12 L4 6 Z" />
+    <polyline points="9 12 11 14 15 10" />
+  </svg>
+)
+
+const IconLinkedIn = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
+    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+    <rect x="2" y="9" width="4" height="12" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+)
+
+const IconGitHub = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
+  </svg>
+)
+
+// ===== Hooks =====
 function useActiveSection(ids) {
   const [active, setActive] = useState('')
   useEffect(() => {
@@ -35,9 +102,92 @@ function useFadeIn() {
   return ref
 }
 
+function useTypewriter(items, typeSpeed = 80, deleteSpeed = 45, pauseTime = 2200) {
+  const [displayed, setDisplayed] = useState('')
+  const [index, setIndex] = useState(0)
+  const [deleting, setDeleting] = useState(false)
+
+  useEffect(() => {
+    const current = items[index]
+    let timeout
+
+    if (!deleting && displayed === current) {
+      timeout = setTimeout(() => setDeleting(true), pauseTime)
+    } else if (deleting && displayed === '') {
+      setDeleting(false)
+      setIndex((i) => (i + 1) % items.length)
+    } else if (deleting) {
+      timeout = setTimeout(() => setDisplayed((d) => d.slice(0, -1)), deleteSpeed)
+    } else {
+      timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), typeSpeed)
+    }
+
+    return () => clearTimeout(timeout)
+  }, [displayed, deleting, index])
+
+  return displayed
+}
+
+// ===== Components =====
+function FadeIn({ tag: Tag = 'div', children, ...props }) {
+  const ref = useFadeIn()
+  return <Tag ref={ref} className={`fade-in${props.className ? ' ' + props.className : ''}`} {...props}>{children}</Tag>
+}
+
+function StatCounter({ value, label }) {
+  const ref = useRef(null)
+  const [count, setCount] = useState(0)
+  const [started, setStarted] = useState(false)
+
+  const num = parseInt(value)
+  const isNumeric = !isNaN(num)
+  const suffix = isNumeric ? value.replace(String(num), '') : ''
+
+  useEffect(() => {
+    if (!isNumeric) return
+    const el = ref.current
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setStarted(true); obs.disconnect() } },
+      { threshold: 0.5 }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (!started || !isNumeric) return
+    const startTime = performance.now()
+    const duration = 1400
+    const animate = (now) => {
+      const t = Math.min((now - startTime) / duration, 1)
+      const eased = 1 - Math.pow(1 - t, 3)
+      setCount(Math.floor(eased * num))
+      if (t < 1) requestAnimationFrame(animate)
+      else setCount(num)
+    }
+    requestAnimationFrame(animate)
+  }, [started])
+
+  return (
+    <div className="stat-item" ref={ref}>
+      <span className="stat-value">{isNumeric ? `${count}${suffix}` : value}</span>
+      <span className="stat-label">{label}</span>
+    </div>
+  )
+}
+
+// ===== Data =====
+const HERO_ROLES = [
+  'IT Network Engineer',
+  'NOC & Infrastructure Ops',
+  'CCNA Certified',
+  'Fiber Optic Specialist',
+]
+
 const experience = [
   {
     company: 'BALCITA Fiber Optic Installation Services',
+    companyLogo: balcitaIcon,
     role: 'Network & Infrastructure Engineer',
     period: 'Jan 2023 – Present',
     sub: 'Project-Based / Site Deployment | Subcontractor — TechConnect I.T. Solutions',
@@ -59,6 +209,7 @@ const experience = [
   },
   {
     company: 'Fujitsu Philippines Inc.',
+    companyLogo: fujitsuLogo,
     role: 'IT Infrastructure and Systems Support Intern',
     period: 'Nov 2023 – Apr 2024',
     sub: 'University OJT Internship — Digital Systems Platform Unit (DSPU)',
@@ -72,6 +223,20 @@ const experience = [
       'Supported endpoint security operations using Sophos Endpoint and Microsoft Defender.',
       'Used virtual machines for testing, patching, and controlled troubleshooting.',
       'Logged and updated incidents and change activities in ServiceNow and Spiceworks under ITIL-aligned processes.',
+    ],
+  },
+  {
+    company: 'BALCITA Fiber Optic Installation Services',
+    companyLogo: balcitaIcon,
+    role: 'Web Developer — In-House Project',
+    period: '2026',
+    sub: 'Internal Web Development',
+    clients: null,
+    note: null,
+    bullets: [
+      'Designed and developed the company website from scratch using Angular 21, TypeScript, HTML5, and CSS3 — building multiple pages including Home, About, Services, Portfolio, Clients, Team, and Contact.',
+      'Deployed and hosted the live site on Netlify with continuous deployment (CD) connected to GitHub, ensuring automatic builds on every code push.',
+      'Managed full version control using Git and GitHub throughout the entire development process, maintaining clean commit history and project structure.',
     ],
   },
 ]
@@ -90,7 +255,7 @@ const clients = [
   { name: 'San Miguel Corporation', industry: 'FMCG / Conglomerate' },
   { name: 'Procter & Gamble', industry: 'FMCG' },
   { name: 'PLDT Vitro', industry: 'Telecommunications' },
-  { name: 'OKADA Manila', industry: 'Hospitality' },
+  { name: 'OKADA Manila', industry: 'Entertainment & Integrated Resort' },
   { name: 'Manila Water', industry: 'Utilities' },
   { name: 'Total Information Management (TIM)', industry: 'IT Services' },
 ]
@@ -99,6 +264,7 @@ const projects = [
   {
     title: 'BALCITA Fiber Optics Website',
     desc: 'Designed and developed the company website from scratch using Angular 21, TypeScript, HTML5, and CSS3. Deployed on Netlify with continuous deployment connected to GitHub.',
+    images: [balcitaLogo],
     tags: ['Angular 21', 'TypeScript', 'HTML5', 'CSS3', 'Netlify', 'GitHub'],
     live: 'https://balcita-fiberoptics.netlify.app/home',
     github: null,
@@ -108,6 +274,7 @@ const projects = [
     award: 'Best Research in Science and Technology — LPU 18th Annual Best Student Research Forum, March 10, 2025',
     desc: 'BS Thesis — a monitoring mobile app for financial management with receipt scanner using Optical Character Recognition (OCR). Selected to represent the College of Technology at the LPU Annual Best Student Research Forum.',
     team: 'Marc Joseph G. Balcita · Mathew A. Dela Cruz · Joseph Andrian O. Mabalot',
+    images: [receiptCert, receiptInvite],
     tags: ['Mobile App', 'OCR', 'Financial Management', 'Thesis', 'LPU College of Technology'],
     live: null,
     github: null,
@@ -155,27 +322,27 @@ const skillCategories = [
 
 const services = [
   {
-    icon: '⬡',
+    icon: IconNetwork,
     title: 'Network Design & Deployment',
     desc: 'Enterprise LAN/WAN design, VLAN configuration, inter-VLAN routing, OSPF/EIGRP, and multi-site Cisco infrastructure deployment.',
   },
   {
-    icon: '◈',
+    icon: IconMonitor,
     title: 'NOC & 24/7 Operations',
     desc: 'Tier 1/L1 NOC monitoring, incident triage, SLA-based escalation, and proactive infrastructure health monitoring using Uptime Kuma and Zabbix.',
   },
   {
-    icon: '◎',
+    icon: IconFiber,
     title: 'Fiber Optic & Structured Cabling',
     desc: 'Enterprise backbone termination, fusion splicing, ODF/FDB installation, and OTDR/Fluke acceptance testing for data centers and corporate sites.',
   },
   {
-    icon: '▣',
+    icon: IconServer,
     title: 'Data Center & Rack Buildout',
     desc: 'Full rack assembly, patch panel installation, structured patching, airflow management, and cable labeling for enterprise and co-location environments.',
   },
   {
-    icon: '◬',
+    icon: IconShield,
     title: 'Security & VPN',
     desc: 'Palo Alto firewall policy management, GlobalProtect VPN deployment and validation, IDS/IPS configuration, and network access control.',
   },
@@ -198,11 +365,6 @@ const training = [
   },
 ]
 
-function FadeIn({ tag: Tag = 'div', children, ...props }) {
-  const ref = useFadeIn()
-  return <Tag ref={ref} className={`fade-in${props.className ? ' ' + props.className : ''}`} {...props}>{children}</Tag>
-}
-
 const NAV_LINKS = [
   { href: '#services', label: 'Services' },
   { href: '#about', label: 'About' },
@@ -215,9 +377,17 @@ const NAV_LINKS = [
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [showTop, setShowTop] = useState(false)
   const active = useActiveSection(['services', 'about', 'experience', 'clients', 'projects', 'skills', 'contact'])
+  const typedRole = useTypewriter(HERO_ROLES)
 
   const closeMenu = () => setMenuOpen(false)
+
+  useEffect(() => {
+    const onScroll = () => setShowTop(window.scrollY > 500)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   return (
     <>
@@ -232,6 +402,14 @@ function App() {
             </li>
           ))}
         </ul>
+        <div className="nav-icons">
+          <a href="https://linkedin.com/in/marc-joseph-balcita-95b528284" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <IconLinkedIn />
+          </a>
+          <a href="https://github.com/Lycheegrr" target="_blank" rel="noreferrer" aria-label="GitHub">
+            <IconGitHub />
+          </a>
+        </div>
         <button className={`hamburger${menuOpen ? ' open' : ''}`} onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
           <span /><span /><span />
         </button>
@@ -242,7 +420,10 @@ function App() {
           <div className="open-badge">Open to Opportunities</div>
           <p className="hero-greeting">Hi, I'm</p>
           <h1>Marc Joseph G. Balcita</h1>
-          <p className="hero-title">IT Network Engineer &amp; CCNA Certified</p>
+          <p className="hero-title">
+            <span>{typedRole}</span>
+            <span className="cursor" aria-hidden="true" />
+          </p>
           <p className="hero-sub">
             NOC &amp; Infrastructure Operations — 3+ years delivering enterprise network design,
             security, and multi-site deployments across banking, healthcare, telecom, and data center environments.
@@ -256,23 +437,23 @@ function App() {
 
       <div className="stats-bar">
         {stats.map((s) => (
-          <div className="stat-item" key={s.label}>
-            <span className="stat-value">{s.value}</span>
-            <span className="stat-label">{s.label}</span>
-          </div>
+          <StatCounter key={s.label} value={s.value} label={s.label} />
         ))}
       </div>
 
       <FadeIn tag="section" id="services">
         <h2>What I Do</h2>
         <div className="services-grid">
-          {services.map((s) => (
-            <div className="service-card" key={s.title}>
-              <span className="service-icon">{s.icon}</span>
-              <h3>{s.title}</h3>
-              <p>{s.desc}</p>
-            </div>
-          ))}
+          {services.map((s) => {
+            const ServiceIcon = s.icon
+            return (
+              <div className="service-card" key={s.title}>
+                <span className="service-icon"><ServiceIcon /></span>
+                <h3>{s.title}</h3>
+                <p>{s.desc}</p>
+              </div>
+            )
+          })}
         </div>
       </FadeIn>
 
@@ -313,11 +494,14 @@ function App() {
       <FadeIn tag="section" id="experience">
         <h2>Experience</h2>
         <div className="experience-list">
-          {experience.map((job) => (
-            <div className="exp-card" key={job.company}>
+          {experience.map((job, i) => (
+            <div className="exp-card" key={`${job.company}-${i}`}>
               <div className="exp-header">
                 <div className="exp-title-block">
-                  <h3>{job.company}</h3>
+                  <div className="exp-company-row">
+                    {job.companyLogo && <img src={job.companyLogo} alt={job.company} className="exp-company-logo" />}
+                    <h3>{job.company}</h3>
+                  </div>
                   <p className="exp-role">{job.role}</p>
                   {job.sub && <p className="exp-sub">{job.sub}</p>}
                   {job.clients && (
@@ -330,7 +514,7 @@ function App() {
                 <span className="exp-period">{job.period}</span>
               </div>
               <ul className="exp-bullets">
-                {job.bullets.map((b, i) => <li key={i}>{b}</li>)}
+                {job.bullets.map((b, bi) => <li key={bi}>{b}</li>)}
               </ul>
             </div>
           ))}
@@ -355,7 +539,15 @@ function App() {
         <div className="projects-grid">
           {projects.map((project) => (
             <div className="project-card" key={project.title}>
-              <div className="project-img-placeholder">Preview</div>
+              {project.images ? (
+                <div className="project-img-gallery">
+                  {project.images.map((img, i) => (
+                    <img key={i} src={img} alt={`${project.title} ${i + 1}`} className="project-gallery-img" />
+                  ))}
+                </div>
+              ) : (
+                <div className="project-img-placeholder">Preview</div>
+              )}
               <div className="project-info">
                 {project.award && (
                   <div className="project-award">
@@ -447,6 +639,7 @@ function App() {
         </div>
         <div className="social-links">
           <a href="https://linkedin.com/in/marc-joseph-balcita-95b528284" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://github.com/Lycheegrr" target="_blank" rel="noreferrer">GitHub</a>
           <a href="mailto:mjbalcitaa@gmail.com">Email</a>
         </div>
       </FadeIn>
@@ -454,6 +647,14 @@ function App() {
       <footer>
         <p>Built by Marc Joseph G. Balcita &copy; {new Date().getFullYear()}</p>
       </footer>
+
+      <button
+        className={`scroll-top${showTop ? ' visible' : ''}`}
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        aria-label="Back to top"
+      >
+        ↑
+      </button>
     </>
   )
 }
