@@ -340,7 +340,7 @@ const experience = [
 
 const stats = [
   { value: '3+', label: 'Years Experience' },
-  { value: '9+', label: 'Industry Sectors' },
+  { value: '10+', label: 'Industry Sectors' },
   { value: '100+', label: 'Endpoints per Engagement' },
   { value: 'CCNA', label: 'Cisco Certified' },
 ]
