@@ -247,7 +247,6 @@ h2::after {
   color: var(--text-muted);
   font-size: 0.88rem;
   line-height: 1.6;
-  text-align: justify;
 }
 
 /* ===== Stats Bar ===== */
@@ -464,7 +463,6 @@ h2::after {
   padding-left: 18px;
   position: relative;
   line-height: 1.6;
-  text-align: justify;
 }
 .exp-bullets li::before {
   content: '▸';
