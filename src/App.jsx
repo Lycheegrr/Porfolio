@@ -263,10 +263,18 @@ const clients = [
 
 const projects = [
   {
-    title: 'BALCITA Fiber Optics',
-    desc: 'Led end-to-end field deployments under BALCITA Fiber Optics across enterprise and data center environments. Work includes: Juniper AP63 and HPE Aruba wireless access point deployments, fiber optic ODF and patch panel installation, OTDR acceptance testing using Anritsu MT9083, and the NIR Backbone and WLAN Deployment site assessment for Equinix (MN1 and MN2 sites, August 2025). Also designed and developed the company website using Angular 21, TypeScript, HTML5, and CSS3, deployed on Netlify.',
+    title: 'BALCITA Fiber Optics — Field Deployments',
+    desc: 'Led end-to-end field deployments across enterprise and data center environments. Work includes Juniper AP63 and HPE Aruba wireless access point installations, fiber optic ODF and patch panel termination, Fluke and Anritsu MT9083 OTDR acceptance testing, and the NIR Backbone and WLAN Deployment site assessment for Equinix (MN1 and MN2 sites, August 2025).',
     images: [balcitaLogo],
-    tags: ['Juniper AP63', 'HPE Aruba', 'WLAN Deployment', 'OTDR Testing', 'Fiber ODF', 'Equinix', 'Site Assessment', 'Angular 21', 'Netlify'],
+    tags: ['Juniper AP63', 'HPE Aruba', 'WLAN Deployment', 'OTDR Testing', 'Fluke', 'Fiber ODF', 'Equinix', 'Site Assessment'],
+    live: null,
+    github: null,
+  },
+  {
+    title: 'BALCITA Fiber Optics — Company Website',
+    desc: 'Designed and developed the company website from scratch using Angular 21, TypeScript, HTML5, and CSS3. Built multiple pages including Home, About, Services, Portfolio, Clients, Team, and Contact. Deployed on Netlify with continuous deployment connected to GitHub.',
+    images: [balcitaLogo],
+    tags: ['Angular 21', 'TypeScript', 'HTML5', 'CSS3', 'Netlify', 'GitHub'],
     live: 'https://balcita-fiberoptics.netlify.app/home',
     github: null,
   },
