@@ -135,11 +135,16 @@ const INDUSTRY_ICONS = {
 }
 
 const LogoMark = () => (
-  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true">
-    <circle cx="12" cy="19" r="1.5" fill="currentColor" stroke="none" />
-    <path d="M 8.5 15.5 A 5 5 0 0 1 15.5 15.5" />
-    <path d="M 5.5 12 A 9.2 9.2 0 0 1 18.5 12" />
-    <path d="M 2.5 8.5 A 13.5 13.5 0 0 1 21.5 8.5" />
+  <svg viewBox="0 0 28 28" width="26" height="26" fill="none" aria-hidden="true">
+    <line x1="14" y1="3.5" x2="3.5" y2="14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    <line x1="14" y1="3.5" x2="24.5" y2="14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    <line x1="3.5" y1="14" x2="14" y2="24.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    <line x1="24.5" y1="14" x2="14" y2="24.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    <line x1="3.5" y1="14" x2="24.5" y2="14" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.35" />
+    <circle cx="14" cy="3.5" r="2.5" fill="currentColor" />
+    <circle cx="3.5" cy="14" r="2.5" fill="currentColor" />
+    <circle cx="24.5" cy="14" r="2.5" fill="currentColor" />
+    <circle cx="14" cy="24.5" r="2.5" fill="currentColor" />
   </svg>
 )
 
@@ -424,6 +429,63 @@ const skillCategories = [
   },
 ]
 
+const STATUS_LABELS = {
+  done:     'Completed',
+  active:   'In Progress',
+  next:     'Up Next',
+  planned:  'Planned',
+  longterm: 'Long-Term',
+}
+
+const roadmapPhases = [
+  {
+    phase: 'Phase 1',
+    title: 'CCNA — Foundation',
+    status: 'done',
+    certs: ['Cisco Certified Network Associate (CCNA)'],
+    skills: ['Routing & Switching', 'VLANs & STP', 'OSPF / EIGRP', 'Subnetting', 'ACLs', 'NAT', 'Network Security Basics'],
+    note: 'Already certified. Actively applying across enterprise fiber, NOC, and data center deployments.',
+  },
+  {
+    phase: 'Phase 2',
+    title: 'CCNP Enterprise — Core',
+    status: 'next',
+    certs: ['Cisco Certified Network Professional Enterprise (CCNP)'],
+    skills: ['Advanced Routing (OSPF / BGP / EIGRP)', 'SD-WAN', 'QoS', 'Network Automation Basics', 'Multicast'],
+    note: 'Builds directly on CCNA. Target: pass ENCOR exam to earn CCNP Enterprise core.',
+  },
+  {
+    phase: 'Phase 3',
+    title: 'Security Specialization',
+    status: 'planned',
+    certs: ['Palo Alto PCNSE (Certified Network Security Engineer)', 'CompTIA Security+'],
+    skills: ['Next-Gen Firewall', 'GlobalProtect VPN', 'Threat Prevention', 'Zero Trust', 'IDS / IPS', 'SIEM'],
+    note: 'Formalizes hands-on Palo Alto experience from field deployments and NOC operations.',
+  },
+  {
+    phase: 'Phase 4',
+    title: 'Cloud & Automation',
+    status: 'planned',
+    certs: ['AWS Solutions Architect – Associate', 'Microsoft AZ-104 (Azure Administrator)', 'Cisco DevNet Associate'],
+    skills: ['AWS / Azure Networking', 'Python for Network Automation', 'Ansible', 'Terraform', 'REST APIs', 'Git / CI-CD'],
+    note: 'Bridges traditional network engineering with cloud-native and infrastructure-as-code practices.',
+  },
+  {
+    phase: 'Phase 5',
+    title: 'Expert Level — CCIE & CISSP',
+    status: 'longterm',
+    certs: ['Cisco Certified Internetwork Expert (CCIE) — Enterprise Infrastructure', 'CISSP (Certified Information Systems Security Professional)'],
+    skills: ['Advanced Network Architecture', 'Large-Scale Enterprise Design', 'Security Governance', 'Risk Management', 'Lab & Written Exam Mastery'],
+    note: 'Ultimate expert-level milestone combining Cisco\'s highest networking credential with globally recognized security leadership.',
+  },
+]
+
+const roadmapOutcomes = [
+  { title: 'Senior Network Engineer', desc: 'Design and own multi-site enterprise network infrastructure end-to-end.' },
+  { title: 'Network Security Architect', desc: 'Lead firewall policy, VPN, and zero-trust implementation across cloud and on-prem.' },
+  { title: 'Cloud Network Engineer', desc: 'Build and automate hybrid cloud networking across AWS and Azure environments.' },
+]
+
 const services = [
   {
     icon: IconNetwork,
@@ -503,6 +565,7 @@ const NAV_LINKS = [
   { href: '#clients', label: 'Industries' },
   { href: '#projects', label: 'Projects' },
   { href: '#skills', label: 'Skills' },
+  { href: '#roadmap', label: 'Roadmap' },
   { href: '#contact', label: 'Contact' },
 ]
 
@@ -837,6 +900,44 @@ function App() {
               )}
             </div>
           ))}
+        </div>
+      </FadeIn>
+
+      <FadeIn tag="section" id="roadmap">
+        <h2>Certification Roadmap</h2>
+        <p className="section-sub">A structured path from CCNA to expert-level credentials — building toward senior engineering, security architecture, and cloud networking roles.</p>
+        <div className="roadmap-timeline">
+          {roadmapPhases.map((p) => (
+            <div key={p.phase} className={`roadmap-card roadmap-${p.status}`}>
+              <div className="roadmap-card-header">
+                <span className="roadmap-phase">{p.phase}</span>
+                <span className={`roadmap-status roadmap-status-${p.status}`}>{STATUS_LABELS[p.status]}</span>
+              </div>
+              <h3 className="roadmap-title">{p.title}</h3>
+              <div className="roadmap-certs">
+                {p.certs.map((c) => (
+                  <span key={c} className="roadmap-cert">{c}</span>
+                ))}
+              </div>
+              <div className="roadmap-skills">
+                {p.skills.map((s) => (
+                  <span key={s} className="skill-badge">{s}</span>
+                ))}
+              </div>
+              {p.note && <p className="roadmap-note">{p.note}</p>}
+            </div>
+          ))}
+        </div>
+        <div className="roadmap-outcomes">
+          <h3>Target Career Outcomes</h3>
+          <div className="roadmap-outcomes-grid">
+            {roadmapOutcomes.map((o) => (
+              <div key={o.title} className="roadmap-outcome-card">
+                <strong>{o.title}</strong>
+                <p>{o.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </FadeIn>
 
