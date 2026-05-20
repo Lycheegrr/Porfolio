@@ -5,6 +5,7 @@ import profilePhoto from './assets/profile.png'
 import receiptCert from './assets/receipt-certificate.png'
 import receiptInvite from './assets/receipt-invite.png'
 import balcitaLogo from './assets/balcita-logo.svg'
+import balcitaScreenshot from './assets/balcita-screenshot.png'
 import balcitaIcon from './assets/balcita-logo-icon.png'
 import fujitsuLogo from './assets/fujitsu-logo.png'
 
@@ -241,9 +242,12 @@ const experience = [
     clients: null,
     note: null,
     bullets: [
-      'Designed and developed the company website from scratch using Angular 21, TypeScript, HTML5, and CSS3 — building multiple pages including Home, About, Services, Portfolio, Clients, Team, and Contact.',
-      'Deployed and hosted the live site on Netlify with continuous deployment (CD) connected to GitHub, ensuring automatic builds on every code push.',
-      'Managed full version control using Git and GitHub throughout the entire development process, maintaining clean commit history and project structure.',
+      'Designed and developed an 8-page company SPA from scratch using Angular 21 (Standalone Components), TypeScript 5.9, RxJS, HTML5, and CSS3 — pages include Home, About, Services, Portfolio, Clients, Team, and Contact.',
+      'Built a serverless backend using Node.js and Netlify Functions; integrated Nodemailer for automated transactional email and Netlify Forms for form submission handling.',
+      'Implemented responsive, mobile-first layouts with 3D CSS animations, inline SVG icons, and cross-browser compatibility.',
+      'Deployed on Netlify with CI/CD connected to GitHub — automatic production builds on every push.',
+      'Wrote unit tests with Vitest and enforced code formatting with Prettier throughout the project.',
+      'Managed full version control using Git and GitHub, maintaining clean commit history and structured project organization.',
     ],
   },
 ]
@@ -271,17 +275,25 @@ const projects = [
   {
     title: 'BALCITA Fiber Optics — Field Deployments',
     desc: 'End-to-end field deployments across 9 enterprise clients spanning banking, healthcare, telecom, and data center environments. Commissioned 100+ endpoints per engagement — Wi-Fi APs, IP cameras, IP phones, and network devices. Delivered Juniper AP63 and HPE Aruba WLAN deployments, fiber ODF and patch panel termination, Fluke and Anritsu MT9083 OTDR acceptance testing, and site assessment for Equinix MN1/MN2 NIR Backbone (August 2025).',
-    images: [balcitaLogo],
+    images: [balcitaScreenshot],
     tags: ['Juniper AP63', 'HPE Aruba', 'WLAN Deployment', 'OTDR Testing', 'Fluke', 'Fiber ODF', 'Equinix', 'Site Assessment'],
     live: null,
     github: null,
   },
   {
     title: 'BALCITA Fiber Optics — Company Website',
-    desc: 'Designed and developed an 8-page company website from scratch using Angular 21, TypeScript, HTML5, and CSS3. Pages include Home, About, Services, Portfolio, Clients, Team, and Contact. Deployed on Netlify with CI/CD connected to GitHub — automatic builds on every push.',
-    images: [balcitaLogo],
-    tags: ['Angular 21', 'TypeScript', 'HTML5', 'CSS3', 'Netlify', 'GitHub'],
+    desc: 'Designed and developed an 8-page company SPA using Angular 21 (Standalone Components), TypeScript 5.9, RxJS, Node.js, and Netlify Functions. Features a serverless backend with Nodemailer for transactional email and Netlify Forms for form handling, 3D CSS animations, inline SVG icons, and a mobile-first responsive layout. Deployed on Netlify with CI/CD connected to GitHub.',
+    images: [balcitaScreenshot],
+    tags: ['Angular 21', 'TypeScript 5.9', 'RxJS', 'Node.js', 'Netlify Functions', 'Nodemailer', 'HTML5 / CSS3', 'Vitest', 'Netlify CI/CD', 'GitHub'],
     live: 'https://balcita-fiberoptics.netlify.app/home',
+    github: null,
+  },
+  {
+    title: 'Personal Portfolio Website',
+    desc: 'Designed and built this single-page portfolio from scratch using React 19 and Vite 8 — no UI library. Implemented custom hooks for IntersectionObserver scroll-triggered animations, a typewriter effect, animated stat counters with easing curves, an image lightbox with keyboard support, and an EmailJS dual-send contact form (notification + auto-reply). Fully responsive with hamburger navigation and prefers-reduced-motion accessibility support.',
+    images: null,
+    tags: ['React 19', 'Vite 8', 'EmailJS', 'IntersectionObserver', 'CSS Animations', 'Responsive Design'],
+    live: null,
     github: 'https://github.com/Lycheegrr',
   },
   {
@@ -330,8 +342,12 @@ const skillCategories = [
     skills: ['ServiceNow', 'Znuny / OTRS', 'Spiceworks', 'ITIL', 'RFC / MOP Creation', 'Change Management', 'SLA Adherence'],
   },
   {
-    label: 'Web Development',
-    skills: ['Angular 21', 'TypeScript', 'HTML5 / CSS3', 'Git', 'GitHub', 'Netlify CD', 'VS Code'],
+    label: 'Frontend Development',
+    skills: ['Angular 21', 'React 19', 'TypeScript 5.9', 'RxJS', 'HTML5 / CSS3', 'SVG', 'Responsive Design', 'SPA Architecture', 'Vite', 'Git', 'GitHub', 'Netlify', 'VS Code'],
+  },
+  {
+    label: 'Backend & Serverless',
+    skills: ['Node.js', 'Netlify Functions', 'Nodemailer', 'Netlify Forms', 'Vitest', 'npm'],
   },
 ]
 
@@ -400,6 +416,93 @@ const training = [
   },
 ]
 
+// ===== Roadmap Data =====
+const STATUS_LABELS = {
+  done: '✓ Done',
+  active: 'In Progress',
+  next: 'Up Next',
+  planned: 'Planned',
+  longterm: 'Long Game',
+}
+
+const roadmapPhases = [
+  {
+    phase: '✓',
+    label: 'Foundation — Completed',
+    subtitle: 'CCNA 200-301 & Core Experience',
+    period: 'Completed 2024',
+    status: 'done',
+    certs: [
+      { code: 'CC', name: 'CCNA 200-301', skills: ['Routing & Switching', 'Security Fundamentals', 'Automation basics'] },
+      { code: 'EX', name: 'NOC & Infrastructure', skills: ['Incident triage', 'Fiber / OTDR', 'Cisco · Palo Alto', 'GCP · Azure'] },
+    ],
+    summary: 'Solid L1/L2 foundation with hands-on exposure to enterprise troubleshooting, fiber infrastructure, and cloud platforms — ahead of most candidates at this stage.',
+  },
+  {
+    phase: '01',
+    label: 'Phase 1 — Now',
+    subtitle: 'CCNP Enterprise + Cloud Networking',
+    period: '2025 – early 2026',
+    status: 'active',
+    certs: [
+      { code: 'EN', name: 'CCNP Enterprise', skills: ['ENCOR + ENARSI', 'BGP · OSPF · MPLS', 'SD-WAN', 'VRF · QoS'] },
+      { code: 'AZ', name: 'AZ-700', skills: ['Azure Network Engineer', 'VPN Gateway', 'ExpressRoute', 'Azure Firewall'] },
+      { code: 'GCP', name: 'GCP Cloud Network Engineer', skills: ['VPC · SDN', 'Cloud Interconnect'] },
+    ],
+    summary: 'Priority: CCNP Enterprise first — directly addresses gaps in advanced routing, SD-WAN, and BGP. Then AZ-700 or GCP cert to formalize existing cloud exposure.',
+  },
+  {
+    phase: '02',
+    label: 'Phase 2 — Security Track',
+    subtitle: 'Security+ · Palo Alto PCNSE',
+    period: '2026',
+    status: 'next',
+    certs: [
+      { code: 'S+', name: 'CompTIA Security+', skills: ['Vendor-neutral', 'DoD-recognized', '6–8 weeks'] },
+      { code: 'PA', name: 'Palo Alto PCNSE', skills: ['NGFW', 'Zero Trust', 'Builds on exposure'] },
+      { code: 'DN', name: 'Cisco DevNet Associate', skills: ['Python · Netmiko', 'Ansible', 'REST APIs'] },
+    ],
+    summary: 'Security+ is a fast win — 6 to 8 weeks of study, vendor-neutral, widely recognized. PCNSE formalizes existing Palo Alto exposure. DevNet adds automation credibility increasingly required in mid-level JDs.',
+  },
+  {
+    phase: '03',
+    label: 'Phase 3 — Senior Track',
+    subtitle: 'CCNP Security · AWS Networking · Juniper',
+    period: '2027',
+    status: 'planned',
+    certs: [
+      { code: 'CS', name: 'CCNP Security', skills: ['ASA · FTD · ISE', 'Firewall · IPS · VPN'] },
+      { code: 'AWS', name: 'AWS Advanced Networking', skills: ['Transit Gateway', 'Direct Connect', 'SG · US · UAE'] },
+      { code: 'JN', name: 'Juniper JNCIS-ENT', skills: ['JunOS', 'Telco/ISP roles', 'Globe · PLDT'] },
+    ],
+    summary: 'This tier unlocks senior engineer titles and international relocation packages. CCNP Security builds prerequisites for CISSP. AWS Networking Specialty is high-demand in Singapore and UAE markets.',
+  },
+  {
+    phase: '04',
+    label: 'Phase 4 — Expert Level',
+    subtitle: 'CCIE Enterprise · CISSP',
+    period: '2028–2029',
+    status: 'longterm',
+    certs: [
+      { code: 'CI', name: 'CCIE Enterprise Infrastructure', skills: ['Written + 8hr lab', 'Global gold standard', 'Major salary jump'] },
+      { code: 'ISC', name: 'CISSP', skills: ['5yr exp required', '8 security domains', 'Management level'] },
+    ],
+    summary: 'CCIE removes the salary ceiling. CISSP requires 5 years of qualifying security experience — pursue only after CCNP Security and hands-on security responsibilities. Both are long-game investments with significant returns.',
+  },
+]
+
+const roadmapAddons = [
+  'Fortinet NSE 4/7', 'F5 BIG-IP / LTM', 'Zscaler ZCCA/ZCCP',
+  'CCNP Data Center', 'Terraform Associate', 'Nokia SRX (telco)',
+]
+
+const roadmapOutcomes = [
+  { icon: '🛡', title: 'Security Network Engineer', when: 'After Phase 2' },
+  { icon: '☁', title: 'Cloud Network Engineer', when: 'After Phase 1–2' },
+  { icon: '⚙', title: 'NetDevOps / Automation', when: 'After Phase 2' },
+  { icon: '🌏', title: 'Senior NE — SG · UAE · NZ', when: 'After Phase 3–4' },
+]
+
 // ===== EmailJS Config =====
 // Replace these with your real IDs from emailjs.com dashboard
 const EMAILJS_SERVICE_ID      = 'service_jfskfli'
@@ -414,6 +517,7 @@ const NAV_LINKS = [
   { href: '#clients', label: 'Clients' },
   { href: '#projects', label: 'Projects' },
   { href: '#skills', label: 'Skills' },
+  { href: '#roadmap', label: 'Roadmap' },
   { href: '#contact', label: 'Contact' },
 ]
 
@@ -422,7 +526,7 @@ function App() {
   const [showTop, setShowTop] = useState(false)
   const [formState, setFormState] = useState('idle') // 'idle' | 'sending' | 'sent' | 'error'
   const [lightbox, setLightbox] = useState(null)
-  const active = useActiveSection(['services', 'about', 'experience', 'clients', 'projects', 'skills', 'contact'])
+  const active = useActiveSection(['services', 'about', 'experience', 'clients', 'projects', 'skills', 'roadmap', 'contact'])
   const typedRole = useTypewriter(HERO_ROLES)
   const menuRef = useRef(null)
   const formRef = useRef(null)
@@ -716,6 +820,64 @@ function App() {
               )}
             </div>
           ))}
+        </div>
+      </FadeIn>
+
+      <FadeIn tag="section" id="roadmap">
+        <h2>Certification Roadmap</h2>
+        <p className="roadmap-sub">Target: Mid-Level to Senior Network Engineer</p>
+        <div className="roadmap-list">
+          {roadmapPhases.map((phase) => (
+            <div className={`roadmap-card roadmap-${phase.status}`} key={phase.phase}>
+              <div className="roadmap-card-header">
+                <div className="roadmap-phase-info">
+                  <span className="roadmap-phase-num">{phase.phase}</span>
+                  <div>
+                    <span className="roadmap-phase-label">{phase.label}</span>
+                    {phase.subtitle && <span className="roadmap-phase-subtitle">{phase.subtitle}</span>}
+                  </div>
+                </div>
+                <div className="roadmap-right">
+                  <span className={`roadmap-status roadmap-status-${phase.status}`}>{STATUS_LABELS[phase.status]}</span>
+                  <span className="roadmap-period">{phase.period}</span>
+                </div>
+              </div>
+              <div className="roadmap-certs">
+                {phase.certs.map((cert) => (
+                  <div className="roadmap-cert" key={cert.name}>
+                    <span className="roadmap-cert-code">{cert.code}</span>
+                    <div className="roadmap-cert-info">
+                      <span className="roadmap-cert-name">{cert.name}</span>
+                      <div className="roadmap-cert-skills">
+                        {cert.skills.map((s) => <span key={s}>{s}</span>)}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <p className="roadmap-summary">{phase.summary}</p>
+            </div>
+          ))}
+        </div>
+        <div className="roadmap-addons">
+          <h3>Optional Add-ons</h3>
+          <div className="roadmap-addons-grid">
+            {roadmapAddons.map((addon) => (
+              <span className="skill-badge" key={addon}>{addon}</span>
+            ))}
+          </div>
+        </div>
+        <div className="roadmap-outcomes">
+          <h3>Target Career Outcomes</h3>
+          <div className="roadmap-outcomes-grid">
+            {roadmapOutcomes.map((outcome) => (
+              <div className="roadmap-outcome-card" key={outcome.title}>
+                <span className="roadmap-outcome-icon">{outcome.icon}</span>
+                <span className="roadmap-outcome-title">{outcome.title}</span>
+                <span className="roadmap-outcome-when">{outcome.when}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </FadeIn>
 
