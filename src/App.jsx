@@ -263,10 +263,10 @@ const clients = [
 
 const projects = [
   {
-    title: 'BALCITA Fiber Optics Website',
-    desc: 'Designed and developed the company website from scratch using Angular 21, TypeScript, HTML5, and CSS3. Deployed on Netlify with continuous deployment connected to GitHub.',
+    title: 'BALCITA Fiber Optics',
+    desc: 'Led field deployments and site assessments under BALCITA Fiber Optics, including HPE Aruba access point installations and the NIR Backbone and WLAN Deployment project for Equinix (MN1 and MN2 sites, August 2025). Also designed and developed the company website from scratch using Angular 21, TypeScript, HTML5, and CSS3, deployed on Netlify with continuous deployment.',
     images: [balcitaLogo],
-    tags: ['Angular 21', 'TypeScript', 'HTML5', 'CSS3', 'Netlify', 'GitHub'],
+    tags: ['HPE Aruba', 'WLAN Deployment', 'Site Assessment', 'Equinix', 'Angular 21', 'TypeScript', 'Netlify'],
     live: 'https://balcita-fiberoptics.netlify.app/home',
     github: null,
   },
