@@ -380,7 +380,7 @@ const projects = [
     desc: 'Designed and built this single-page portfolio from scratch using React 19 and Vite 8 -no UI library. Implemented custom hooks for IntersectionObserver scroll-triggered animations, a typewriter effect, animated stat counters with easing curves, an image lightbox with keyboard support, and an EmailJS dual-send contact form (notification + auto-reply). Fully responsive with hamburger navigation and prefers-reduced-motion accessibility support.',
     images: [portfolioLogo],
     tags: ['React 19', 'Vite 8', 'EmailJS', 'IntersectionObserver', 'CSS Animations', 'Responsive Design'],
-    live: null,
+    live: 'https://marcbalcita.vercel.app',
     github: 'https://github.com/Lycheegrr',
   },
   {
@@ -677,7 +677,7 @@ function App() {
 
       <section id="hero">
         <div className="hero-content">
-          <div className="open-badge">Open to Opportunities</div>
+          <div className="open-badge">Open to Opportunities · PH &amp; International</div>
           <p className="hero-greeting">Hi, I'm</p>
           <h1>Marc Joseph G. Balcita</h1>
           <p className="hero-title">
