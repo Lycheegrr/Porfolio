@@ -372,7 +372,7 @@ const projects = [
     desc: 'Designed and developed an 8-page company SPA using Angular 21 (Standalone Components), TypeScript 5.9, RxJS, Node.js, and Netlify Functions. Features a serverless backend with Nodemailer for transactional email and Netlify Forms for form handling, 3D CSS animations, inline SVG icons, and a mobile-first responsive layout. Deployed on Netlify with CI/CD connected to GitHub.',
     images: [balcitaScreenshot],
     tags: ['Angular 21', 'TypeScript', 'Node.js', 'Netlify Functions', 'HTML5 / CSS3', 'GitHub CI/CD'],
-    live: 'https://balcita-fiberoptics.netlify.app/home',
+    live: 'https://balcita-fiberoptics.netlify.app',
     github: 'https://github.com/BalcitaFiberOpticInstallation/BalcitaFiberoptic',
   },
   {
