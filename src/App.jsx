@@ -673,16 +673,13 @@ function App() {
               banking, telecom, and data center environments.
             </p>
             <p>
-              Experienced in Cisco routing and switching, VLAN configuration, OSPF, EIGRP, Palo Alto
-              firewall management, GlobalProtect VPN deployment, IDS/IPS monitoring, and structured
-              incident and change management. Delivered multi-site infrastructure across banking,
-              data center, healthcare, telecommunications, and FMCG environments spanning Luzon,
-              Visayas, and Mindanao.
+              What sets my profile apart is the combination of hands-on field deployment, 24/7 NOC
+              operations, and software development across the same career span, covering physical
+              infrastructure, enterprise systems, and client-facing web projects.
             </p>
             <p>
-              Started working in enterprise network environments in 2023 while concurrently completing
-              a BS in Information Technology, demonstrating the ability to apply academic learning
-              directly in live production settings from early in my career.
+              I started taking enterprise deployments in January 2023 while still completing my degree,
+              which put me in live production environments from my second year of university.
             </p>
             <div className="about-edu">
               <span className="edu-degree">BS Information Technology (Information Security)</span>
