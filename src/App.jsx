@@ -279,23 +279,15 @@ const experience = [
     role: 'Network & Infrastructure Engineer',
     period: 'Jan 2023 – Present',
     sub: 'Project-Based / Site Deployment | Subcontractor -TechConnect I.T. Solutions',
-    note: 'Field & site-based engagement with flexible scheduling -ran concurrently with university studies and OJT (2023–2024).',
+    note: 'Field & site-based engagement -ran concurrently with university studies and OJT (2023–2024).',
     clients: null,
     bullets: [
-      'Delivered enterprise fiber backbone termination, fusion splicing, and structured cabling across multiple sites, including hospitals, data centers, and corporate environments.',
-      'Performed OTDR (SM/MM), Fluke copper/fiber, LinkWare, and Anritsu testing for commissioning, troubleshooting, and client acceptance.',
-      'Installed, labeled, and documented fiber infrastructure in ODFs, FDBs, splice trays, and rack-mounted enclosures.',
-      'Built and organized server racks, patch panels, switches, firewalls, and fiber distribution frames; executed rack-to-rack and rack-to-endpoint patching with proper labeling, airflow consideration, and bend-radius compliance.',
-      'Supported deployment, validation, and connectivity checks for 100+ endpoints and access points, including enterprise Wi-Fi, IP cameras (with VLAN assignment), IP phones, and network-connected devices.',
-      'Configured and supported Cisco Unified Communications Manager (CUCM) IP phones and analog telephony endpoints.',
-      'Configured and validated Cisco switches and routers for basic setup, VLAN mapping, and connectivity testing; supported Juniper Wi-Fi AP deployments and Nokia carrier-grade network infrastructure validation.',
-      'Provided Tier 1 / L1 NOC monitoring and frontline support in a 24/7 operations environment -monitored WLAN and Internet connectivity incidents, assessed user impact, and ensured SLA-aligned first response.',
-      'Performed first-line troubleshooting including AP restarts, DHCP verification, and wired vs. wireless isolation; escalated unresolved incidents to Tier 2 with complete findings and logs.',
-      'Performed remote server administration via virtual machines; executed server updates, patching, restarts, and service validation during approved maintenance windows.',
-      'Supported controlled maintenance activities including service restarts, validation checks, and post-change service health confirmation.',
-      'Supported bidding cost estimates, quotation preparation, and material scope validation for telecom and fiber optic infrastructure works.',
-      'Coordinated technical staff and supervised site ocular inspections to validate project scope, materials, and implementation requirements.',
-      'Prepared progress reports, bill of quantities, as-built plans, and test result documentation for completed works including projects under PLDT Metro Manila Operations.',
+      'Deployed enterprise fiber backbone across 9+ sites (banking, healthcare, telecom, data centers) — fusion splicing, ODF/FDB termination, and OTDR/Fluke/Anritsu acceptance testing.',
+      'Commissioned 100+ endpoints per engagement — Wi-Fi APs, IP cameras, IP phones, and network devices; configured Cisco switches and routers for VLAN mapping and connectivity.',
+      'Built server racks, patch panels, firewalls, and fiber distribution frames with proper labeling, airflow, and bend-radius compliance.',
+      'Provided Tier 1 NOC monitoring in a 24/7 operations environment — incident triage, DHCP/AP troubleshooting, and SLA-aligned escalation with complete findings and logs.',
+      'Supported Juniper Wi-Fi AP deployments, Nokia carrier-grade infrastructure validation, and CUCM IP phone configuration.',
+      'Prepared as-built plans, BOQs, and test documentation; supervised site ocular inspections and coordinated technical staff.',
     ],
   },
   {
@@ -305,18 +297,12 @@ const experience = [
     period: 'Nov 2023 – Apr 2024',
     sub: 'University OJT Internship -Digital Systems Platform Unit (DSPU)',
     clients: null,
-    note: 'Completed as part of BS Information Technology degree requirements (Lyceum of the Philippines University), running concurrently with ongoing project-based field work.',
+    note: 'Completed as part of BS Information Technology degree requirements (Lyceum of the Philippines University), concurrent with ongoing field work.',
     bullets: [
-      'Monitored network gateways, internal services, and infrastructure availability using Uptime Kuma and alert dashboards.',
-      'Assisted in incident detection, service validation, and support for gateways, switches, servers, and internal connectivity.',
-      'Performed endpoint and workstation troubleshooting including Wi-Fi, internet access, user readiness, and remote support.',
-      'Provisioned and troubleshot Windows kiosks and visitor login setups, resolving credential, device readiness, and access issues.',
-      'Set up and supported meeting room systems including Poly / VC devices, display pairing, casting, and AV troubleshooting.',
-      'Deployed and validated network printers (Canon / FollowYouPrint) including print server paths, driver configuration, and end-user acceptance testing; investigated GPO printer deployment issues and escalated with diagnostic logs.',
-      'Accessed routers, switches, and servers using SecureCRT and PuTTY for validation and basic support tasks.',
-      'Supported endpoint security operations using Sophos Endpoint and Microsoft Defender.',
-      'Used virtual machines for testing, patching, and controlled troubleshooting.',
-      'Logged and updated incidents and change activities in ServiceNow and Spiceworks under ITIL-aligned processes.',
+      'Monitored network gateways and infrastructure availability using Uptime Kuma; assisted in incident detection and service validation for switches, servers, and internal connectivity.',
+      'Troubleshot endpoints, workstations, and meeting room AV systems (Poly/VC); provisioned Windows kiosks and resolved credential, device readiness, and remote access issues.',
+      'Deployed and validated network printers (Canon/FollowYouPrint) including print server paths, driver config, and GPO issues; supported endpoint security via Sophos and Microsoft Defender.',
+      'Accessed routers, switches, and servers via SecureCRT and PuTTY; logged incidents and changes in ServiceNow and Spiceworks under ITIL-aligned processes.',
     ],
   },
   {
@@ -328,12 +314,9 @@ const experience = [
     clients: null,
     note: null,
     bullets: [
-      'Designed and developed an 8-page company SPA from scratch using Angular 21 (Standalone Components), TypeScript 5.9, RxJS, HTML5, and CSS3 -pages include Home, About, Services, Portfolio, Clients, Team, and Contact.',
-      'Built a serverless backend using Node.js and Netlify Functions; integrated Nodemailer for automated transactional email and Netlify Forms for form submission handling.',
-      'Implemented responsive, mobile-first layouts with 3D CSS animations, inline SVG icons, and cross-browser compatibility.',
-      'Deployed on Netlify with CI/CD connected to GitHub -automatic production builds on every push.',
-      'Wrote unit tests with Vitest and enforced code formatting with Prettier throughout the project.',
-      'Managed full version control using Git and GitHub, maintaining clean commit history and structured project organization.',
+      'Designed and developed an 8-page company SPA from scratch using Angular 21 (Standalone Components), TypeScript 5.9, RxJS, HTML5, and CSS3.',
+      'Built a serverless backend with Node.js and Netlify Functions — Nodemailer for transactional email, Netlify Forms for submission handling.',
+      'Deployed on Netlify with GitHub CI/CD; wrote unit tests with Vitest and enforced formatting with Prettier.',
     ],
   },
 ]
@@ -488,16 +471,7 @@ const training = [
     label: 'Network Engineer – CCNA Bootcamp (Hands-On Training)',
     org: 'Rivan IT / RivanCyber Training Institute',
     date: 'Sep 2025',
-    bullets: [
-      'Designed, configured, and troubleshot enterprise LAN/WAN topologies using Cisco routers and switches.',
-      'Implemented VLANs, 802.1Q trunking, inter-VLAN routing, and STP fundamentals.',
-      'Configured static routing and dynamic routing protocols including OSPF and EIGRP.',
-      'Performed IP addressing, VLSM subnetting, and network documentation aligned with enterprise standards.',
-      'Applied security fundamentals including port security, ACL configuration, and network segmentation.',
-      'Conducted diagnostics using Cisco CLI tools -ping, traceroute, interface and routing table verification.',
-      'Simulated production WAN scenarios including ISP handoff concepts and service validation.',
-      'Worked with CUCM fundamentals, IP phones, voice VLANs, and basic call-flow validation.',
-    ],
+    detail: 'Hands-on lab training covering LAN/WAN design, VLANs, OSPF/EIGRP, ACLs, subnetting, and CUCM voice fundamentals using Cisco hardware.',
   },
   {
     label: 'Foundational Training & Coursework',
@@ -914,14 +888,13 @@ function App() {
       <footer>
         <div className="footer-content">
           <div className="footer-brand">
-            <span className="footer-logo">Marc J. Balcita</span>
+            <span className="footer-logo">MJ G. Balcita</span>
             <p className="footer-tagline">IT Network Engineer · CCNA Certified</p>
           </div>
-          <nav className="footer-nav" aria-label="Footer navigation">
-            {NAV_LINKS.map(({ href, label }) => (
-              <a key={href} href={href}>{label}</a>
-            ))}
-          </nav>
+          <div className="footer-contact">
+            <span>Pateros, Metro Manila, Philippines</span>
+            <a href="mailto:mjbalcitaa@gmail.com">mjbalcitaa@gmail.com</a>
+          </div>
           <div className="footer-social">
             <a href="https://linkedin.com/in/marc-joseph-balcita-95b528284" target="_blank" rel="noreferrer" aria-label="LinkedIn"><IconLinkedIn /></a>
             <a href="https://github.com/Lycheegrr" target="_blank" rel="noreferrer" aria-label="GitHub"><IconGitHub /></a>

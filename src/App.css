@@ -969,18 +969,22 @@ footer {
   font-size: 0.82rem;
   color: var(--text-muted);
 }
-.footer-nav {
+.footer-contact {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
-.footer-nav a {
+.footer-contact span {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+.footer-contact a {
   color: var(--text-muted);
   text-decoration: none;
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   transition: color 0.2s;
 }
-.footer-nav a:hover { color: var(--primary); }
+.footer-contact a:hover { color: var(--primary); }
 .footer-social {
   display: flex;
   flex-direction: column;
@@ -1036,7 +1040,7 @@ footer {
   .scroll-top { bottom: 20px; right: 20px; }
   .lightbox-img { max-width: 95vw; max-height: 88vh; }
   .footer-content { grid-template-columns: 1fr; gap: 24px; }
-  .footer-nav { flex-direction: row; flex-wrap: wrap; gap: 12px 20px; }
+  .footer-contact { flex-direction: row; flex-wrap: wrap; gap: 8px 16px; }
   .footer-social { flex-direction: row; gap: 20px; }
   footer { padding: 32px 20px 20px; }
 }
