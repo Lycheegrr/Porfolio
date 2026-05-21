@@ -467,8 +467,16 @@ const services = [
   },
 ]
 
+const publications = [
+  {
+    title: 'ReceiptCo: A Mobile-Based Financial Management App with OCR Receipt Scanner',
+    venue: 'LPU 18th Annual Best Student Research Forum',
+    award: 'Best Research in Science and Technology · Certificate of Recognition, Mar 2025',
+    note: 'Accepted for Oral Presentation – Asian Graduate Studies Summit 2025 (A-GRASS), Ho Chi Minh City, Vietnam, May 21–24, 2025',
+  },
+]
+
 const certifications = [
-  { label: 'Best Research in Science and Technology -LPU 18th Annual Best Student Research Forum', detail: 'Certificate of Recognition, Mar 2025' },
   { label: 'Cisco Certified Network Associate (CCNA)', detail: 'Active' },
   { label: 'Fiber Optic Termination and Testing', detail: 'Training Certification' },
   { label: 'Fluke Networks Copper and Fiber Testing', detail: 'Training Certification' },
@@ -820,6 +828,19 @@ function App() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="certifications">
+          <h3>Publications</h3>
+          <ul className="cert-list">
+            {publications.map((pub, i) => (
+              <li key={i} style={{ flexDirection: 'column', alignItems: 'flex-start', gap: '4px' }}>
+                <span className="cert-label">{pub.title}</span>
+                <span className="cert-detail" style={{ textAlign: 'left' }}>{pub.venue}</span>
+                <span className="cert-detail" style={{ textAlign: 'left' }}>{pub.award}</span>
+                <span className="cert-detail" style={{ textAlign: 'left' }}>{pub.note}</span>
+              </li>
+            ))}
+          </ul>
         </div>
         <div className="certifications">
           <h3>Certifications</h3>
