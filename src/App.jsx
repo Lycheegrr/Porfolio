@@ -881,7 +881,6 @@ function App() {
         )}
         <div className="contact-meta">
           <span>Pateros, Metro Manila, Philippines</span>
-          <span>0918 266 1465</span>
           <a href="mailto:mjbalcitaa@gmail.com">mjbalcitaa@gmail.com</a>
         </div>
         <div className="social-links">
