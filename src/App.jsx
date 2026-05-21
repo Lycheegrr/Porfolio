@@ -389,7 +389,7 @@ const skillDomains = [
       },
       {
         label: 'Security & VPN',
-        skills: ['Palo Alto Firewall', 'GlobalProtect VPN', 'IDS / IPS', 'Port Security', 'Network Segmentation', 'Kali Linux', 'Wireshark'],
+        skills: ['Palo Alto Firewall', 'GlobalProtect VPN', 'IDS / IPS', 'Port Security', 'Network Segmentation', 'Sophos Endpoint', 'Microsoft Defender MDE', 'Kali Linux', 'Wireshark'],
       },
       {
         label: 'Linux & Systems',
@@ -438,27 +438,27 @@ const services = [
   {
     icon: IconNetwork,
     title: 'Network Design & Deployment',
-    desc: 'Enterprise LAN/WAN design, VLAN configuration, inter-VLAN routing, OSPF/EIGRP, and multi-site Cisco infrastructure deployment.',
+    desc: 'Design and deploy multi-site LAN/WAN infrastructure including VLAN segmentation, inter-VLAN routing, and OSPF/EIGRP configuration on Cisco platforms.',
   },
   {
     icon: IconMonitor,
     title: 'NOC & 24/7 Operations',
-    desc: 'Tier 1/L1 NOC monitoring, incident triage, SLA-based escalation, and proactive infrastructure health monitoring using Uptime Kuma and Zabbix.',
+    desc: 'Monitor and triage enterprise infrastructure around the clock, managing incidents, escalations, and SLA compliance using Uptime Kuma and Zabbix.',
   },
   {
     icon: IconFiber,
     title: 'Fiber Optic & Structured Cabling',
-    desc: 'Enterprise backbone termination, fusion splicing, ODF/FDB installation, and OTDR/Fluke acceptance testing for data centers and corporate sites.',
+    desc: 'End-to-end fiber installation from backbone termination and fusion splicing to ODF/FDB buildout and OTDR/Fluke acceptance testing on enterprise and data center sites.',
   },
   {
     icon: IconServer,
     title: 'Data Center & Rack Buildout',
-    desc: 'Full rack assembly, patch panel installation, structured patching, airflow management, and cable labeling for enterprise and co-location environments.',
+    desc: 'Build and organize full server racks from scratch, including patch panels, structured cabling, airflow, and labeling for enterprise and co-location environments.',
   },
   {
     icon: IconShield,
     title: 'Security & VPN',
-    desc: 'Palo Alto firewall policy management, GlobalProtect VPN deployment and validation, IDS/IPS configuration, and network access control.',
+    desc: 'Configure and manage Palo Alto firewalls, GlobalProtect VPN, and IDS/IPS policies to enforce network segmentation and access control.',
   },
 ]
 
