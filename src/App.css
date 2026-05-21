@@ -5,6 +5,8 @@
   --primary: #00d4ff;
   --primary-dark: #00a8cc;
   --primary-glow: rgba(0, 212, 255, 0.15);
+  --primary-dev: #00c896;
+  --primary-dev-glow: rgba(0, 200, 150, 0.15);
   --bg: #04090f;
   --bg-card: #07111e;
   --bg-card2: #0a1929;
@@ -697,11 +699,30 @@ h2::after {
 .project-links { display: flex; gap: 10px; }
 
 /* ===== Skills ===== */
+.skill-domain { margin-bottom: 48px; }
+.skill-domain-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.skill-domain-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.skill-domain--dev .skill-cat-label { color: var(--primary-dev); }
+.skill-domain--dev .skill-badge:hover { border-color: var(--primary-dev); color: var(--primary-dev); }
 .skills-categories {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
-  margin-bottom: 48px;
 }
 .skill-category {
   background: var(--bg-card);

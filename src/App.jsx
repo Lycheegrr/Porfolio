@@ -282,10 +282,10 @@ const experience = [
     note: 'Field & site-based engagement -ran concurrently with university studies and OJT (2023–2024).',
     clients: null,
     bullets: [
-      'Deployed enterprise fiber backbone across 9+ sites (banking, healthcare, telecom, data centers) — fusion splicing, ODF/FDB termination, and OTDR/Fluke/Anritsu acceptance testing.',
-      'Commissioned 100+ endpoints per engagement — Wi-Fi APs, IP cameras, IP phones, and network devices; configured Cisco switches and routers for VLAN mapping and connectivity.',
+      'Deployed enterprise fiber backbone across 9+ sites (banking, healthcare, telecom, data centers): fusion splicing, ODF/FDB termination, and OTDR/Fluke/Anritsu acceptance testing.',
+      'Commissioned 100+ endpoints per engagement, including Wi-Fi APs, IP cameras, IP phones, and network devices; configured Cisco switches and routers for VLAN mapping and connectivity.',
       'Built server racks, patch panels, firewalls, and fiber distribution frames with proper labeling, airflow, and bend-radius compliance.',
-      'Provided Tier 1 NOC monitoring in a 24/7 operations environment — incident triage, DHCP/AP troubleshooting, and SLA-aligned escalation with complete findings and logs.',
+      'Provided Tier 1 NOC monitoring in a 24/7 operations environment: incident triage, DHCP/AP troubleshooting, and SLA-aligned escalation with complete findings and logs.',
       'Supported Juniper Wi-Fi AP deployments, Nokia carrier-grade infrastructure validation, and CUCM IP phone configuration.',
       'Prepared as-built plans, BOQs, and test documentation; supervised site ocular inspections and coordinated technical staff.',
     ],
@@ -315,7 +315,7 @@ const experience = [
     note: null,
     bullets: [
       'Designed and developed an 8-page company SPA from scratch using Angular 21 (Standalone Components), TypeScript 5.9, RxJS, HTML5, and CSS3.',
-      'Built a serverless backend with Node.js and Netlify Functions — Nodemailer for transactional email, Netlify Forms for submission handling.',
+      'Built a serverless backend with Node.js and Netlify Functions: Nodemailer for transactional email, Netlify Forms for submission handling.',
       'Deployed on Netlify with GitHub CI/CD; wrote unit tests with Vitest and enforced formatting with Prettier.',
     ],
   },
@@ -344,7 +344,7 @@ const clients = [
 const projects = [
   {
     title: 'BALCITA Fiber Optics -Field Deployments',
-    desc: 'End-to-end field deployments across 9 enterprise sites spanning banking, healthcare, telecommunications, and data center environments. Commissioned 100+ endpoints per engagement — Wi-Fi APs, IP cameras, IP phones, and network devices. Delivered Juniper AP63 and HPE Aruba WLAN deployments, fiber ODF and patch panel termination, Fluke and Anritsu MT9083 OTDR acceptance testing, and co-location data center site assessment.',
+    desc: 'End-to-end field deployments across 9 enterprise sites spanning banking, healthcare, telecommunications, and data center environments. Commissioned 100+ endpoints per engagement, including Wi-Fi APs, IP cameras, IP phones, and network devices. Delivered Juniper AP63 and HPE Aruba WLAN deployments, fiber ODF and patch panel termination, Fluke and Anritsu MT9083 OTDR acceptance testing, and co-location data center site assessment.',
     images: [balcitaScreenshot],
     tags: ['Juniper AP63', 'HPE Aruba', 'WLAN Deployment', 'OTDR Testing', 'Fluke', 'Fiber ODF', 'Co-location DC', 'Site Assessment'],
     live: null,
@@ -378,46 +378,58 @@ const projects = [
   },
 ]
 
-const skillCategories = [
+const skillDomains = [
   {
-    label: 'Networking & Routing',
-    skills: ['LAN/WAN', 'VLANs', 'STP / RSTP / MSTP', 'OSPF', 'EIGRP', 'BGP Awareness', 'Subnetting', 'DHCP', 'DNS', 'NAT', 'ACLs', 'MPLS Awareness'],
+    domain: 'Infrastructure & Networking',
+    key: 'net',
+    categories: [
+      {
+        label: 'Networking & Routing',
+        skills: ['LAN/WAN', 'VLANs', 'STP / RSTP / MSTP', 'OSPF', 'EIGRP', 'BGP Awareness', 'Subnetting', 'DHCP', 'DNS', 'NAT', 'ACLs', 'MPLS Awareness'],
+      },
+      {
+        label: 'Security & VPN',
+        skills: ['Palo Alto Firewall', 'GlobalProtect VPN', 'IDS / IPS', 'Port Security', 'Network Segmentation', 'Kali Linux', 'Wireshark'],
+      },
+      {
+        label: 'Linux & Systems',
+        skills: ['RHEL (Install, Config, Patch)', 'User & Group Management', 'YUM / DNF', 'Shell Scripting', 'Cron Jobs', 'MariaDB', 'Apache Web Server', 'VMware / Hyper-V'],
+      },
+      {
+        label: 'Enterprise Platforms',
+        skills: ['Cisco Catalyst', 'Cisco Meraki', 'Juniper', 'Nokia', 'AudioCodes SBC', 'Cisco CUCM', 'PABX', 'Poly / AV Systems'],
+      },
+      {
+        label: 'Monitoring & Tools',
+        skills: ['Uptime Kuma', 'Zabbix', 'Wireshark', 'SecureCRT', 'PuTTY', 'Postman', 'Quick Assist', 'RDP'],
+      },
+      {
+        label: 'Cloud & Microsoft',
+        skills: ['Microsoft 365', 'Azure Portal', 'Intune MDM', 'Active Directory', 'Exchange', 'Group Policy'],
+      },
+      {
+        label: 'Physical Infrastructure',
+        skills: ['Rack Buildout', 'Structured Cabling', 'Patch Panels', 'OTDR', 'Fluke / Anritsu', 'Fusion Splicing', 'ODF / FDB', 'Fiber Power Meter', 'NAP Testing', 'Control Panel Wiring'],
+      },
+      {
+        label: 'ITSM & Change Management',
+        skills: ['ServiceNow', 'Znuny / OTRS', 'Spiceworks', 'ITIL', 'RFC / MOP Creation', 'Change Management', 'SLA Adherence'],
+      },
+    ],
   },
   {
-    label: 'Security & VPN',
-    skills: ['Palo Alto Firewall', 'GlobalProtect VPN', 'IDS / IPS', 'Port Security', 'Network Segmentation', 'Kali Linux', 'Wireshark'],
-  },
-  {
-    label: 'Linux & Systems',
-    skills: ['RHEL (Install, Config, Patch)', 'User & Group Management', 'YUM / DNF', 'Shell Scripting', 'Cron Jobs', 'MariaDB', 'Apache Web Server', 'VMware / Hyper-V'],
-  },
-  {
-    label: 'Enterprise Platforms',
-    skills: ['Cisco Catalyst', 'Cisco Meraki', 'Juniper', 'Nokia', 'AudioCodes SBC', 'Cisco CUCM', 'PABX', 'Poly / AV Systems'],
-  },
-  {
-    label: 'Monitoring & Tools',
-    skills: ['Uptime Kuma', 'Zabbix', 'Wireshark', 'SecureCRT', 'PuTTY', 'Postman', 'Quick Assist', 'RDP'],
-  },
-  {
-    label: 'Cloud & Microsoft',
-    skills: ['Microsoft 365', 'Azure Portal', 'Intune MDM', 'Active Directory', 'Exchange', 'Group Policy'],
-  },
-  {
-    label: 'Physical Infrastructure',
-    skills: ['Rack Buildout', 'Structured Cabling', 'Patch Panels', 'OTDR', 'Fluke / Anritsu', 'Fusion Splicing', 'ODF / FDB', 'Fiber Power Meter', 'NAP Testing', 'Control Panel Wiring'],
-  },
-  {
-    label: 'ITSM & Change Management',
-    skills: ['ServiceNow', 'Znuny / OTRS', 'Spiceworks', 'ITIL', 'RFC / MOP Creation', 'Change Management', 'SLA Adherence'],
-  },
-  {
-    label: 'Frontend Development',
-    skills: ['Angular 21', 'React 19', 'TypeScript 5.9', 'RxJS', 'HTML5 / CSS3', 'SVG', 'Responsive Design', 'SPA Architecture', 'Vite', 'Git', 'GitHub', 'Netlify', 'VS Code'],
-  },
-  {
-    label: 'Backend & Serverless',
-    skills: ['Node.js', 'Netlify Functions', 'Nodemailer', 'Netlify Forms', 'Firebase', 'Firestore', 'Vitest', 'npm'],
+    domain: 'Software Development',
+    key: 'dev',
+    categories: [
+      {
+        label: 'Frontend Development',
+        skills: ['Angular 21', 'React 19', 'TypeScript 5.9', 'RxJS', 'HTML5 / CSS3', 'SVG', 'Responsive Design', 'SPA Architecture', 'Vite', 'Git', 'GitHub', 'Netlify', 'VS Code'],
+      },
+      {
+        label: 'Backend & Serverless',
+        skills: ['Node.js', 'Netlify Functions', 'Nodemailer', 'Netlify Forms', 'Firebase', 'Firestore', 'Vitest', 'npm'],
+      },
+    ],
   },
 ]
 
@@ -791,18 +803,23 @@ function App() {
 
       <FadeIn tag="section" id="skills">
         <h2>Skills</h2>
-        <div className="skills-categories">
-          {skillCategories.map((cat) => (
-            <div className="skill-category" key={cat.label}>
-              <h3 className="skill-cat-label">{cat.label}</h3>
-              <div className="skills-grid">
-                {cat.skills.map((skill) => (
-                  <span className="skill-badge" key={skill}>{skill}</span>
-                ))}
-              </div>
+        {skillDomains.map((domain) => (
+          <div className={`skill-domain skill-domain--${domain.key}`} key={domain.domain}>
+            <h3 className="skill-domain-label">{domain.domain}</h3>
+            <div className="skills-categories">
+              {domain.categories.map((cat) => (
+                <div className="skill-category" key={cat.label}>
+                  <h3 className="skill-cat-label">{cat.label}</h3>
+                  <div className="skills-grid">
+                    {cat.skills.map((skill) => (
+                      <span className="skill-badge" key={skill}>{skill}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
         <div className="certifications">
           <h3>Publications</h3>
           <ul className="cert-list">
