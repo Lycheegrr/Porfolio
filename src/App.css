@@ -744,6 +744,7 @@ h2::after {
 .fade-in.visible .skill-category:nth-child(7) { transition-delay: 0.40s; }
 .fade-in.visible .skill-category:nth-child(8) { transition-delay: 0.46s; }
 .fade-in.visible .skill-category:nth-child(9) { transition-delay: 0.52s; }
+.fade-in.visible .skill-category:nth-child(10) { transition-delay: 0.58s; }
 .skill-cat-label {
   font-size: 0.8rem;
   font-weight: 700;

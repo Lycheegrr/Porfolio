@@ -299,10 +299,12 @@ const experience = [
     clients: null,
     note: 'Completed as part of BS Information Technology degree requirements (Lyceum of the Philippines University), concurrent with ongoing field work.',
     bullets: [
-      'Monitored network gateways and infrastructure availability using Uptime Kuma; assisted in incident detection and service validation for switches, servers, and internal connectivity.',
-      'Troubleshot endpoints, workstations, and meeting room AV systems (Poly/VC); provisioned Windows kiosks and resolved credential, device readiness, and remote access issues.',
-      'Deployed and validated network printers (Canon/FollowYouPrint) including print server paths, driver config, and GPO issues; supported endpoint security via Sophos and Microsoft Defender.',
-      'Accessed routers, switches, and servers via SecureCRT and PuTTY; logged incidents and changes in ServiceNow and Spiceworks under ITIL-aligned processes.',
+      'Provided Level 1/2 end-user desktop support across Windows and Microsoft 365 environments: troubleshooting connectivity, hardware, software, Exchange, and Office 365 issues for users across multiple locations and time zones (APAC, UK, US) via TeamViewer and AnyDesk.',
+      'Administered Microsoft Azure Portal, Intune MDM (device enrollment, policy deployment, compliance), Active Directory (user account management, password resets), and Group Policy as part of daily infrastructure support workflows.',
+      'Executed software and OS patching, version upgrades, and hardware installation; troubleshot workstations, Windows kiosks, AV systems (Poly/VC), and network printers (Canon/FollowYouPrint) including print server paths and GPO configuration.',
+      'Monitored network gateways, switches, and servers using Uptime Kuma; logged incidents and changes in ServiceNow and Spiceworks under ITIL-aligned processes with SLA-compliant response times and complete audit records.',
+      'Supported endpoint security operations using Sophos Endpoint and Microsoft Defender, assisting in threat detection, remediation, and user notification workflows.',
+      'Coordinated with third-party vendors for warranty service and hardware support; accessed routers, switches, and servers via SecureCRT and PuTTY for remote diagnostics.',
     ],
   },
   {
@@ -396,12 +398,16 @@ const skillDomains = [
         skills: ['RHEL (Install, Config, Patch)', 'User & Group Management', 'YUM / DNF', 'Shell Scripting', 'Cron Jobs', 'MariaDB', 'Apache Web Server', 'VMware / Hyper-V'],
       },
       {
+        label: 'Windows & Desktop Support',
+        skills: ['Windows 10 / 11', 'Windows Server', 'Software Patching', 'OS Upgrades', 'Hardware Installation & Config', 'Endpoint Troubleshooting', 'Printer Deployment', 'L1 / L2 End-User Support'],
+      },
+      {
         label: 'Enterprise Platforms',
         skills: ['Cisco Catalyst', 'Cisco Meraki', 'Juniper', 'Nokia', 'AudioCodes SBC', 'Cisco CUCM', 'PABX', 'Poly / AV Systems'],
       },
       {
         label: 'Monitoring & Tools',
-        skills: ['Uptime Kuma', 'Zabbix', 'Wireshark', 'SecureCRT', 'PuTTY', 'Postman', 'Quick Assist', 'RDP'],
+        skills: ['Uptime Kuma', 'Zabbix', 'Wireshark', 'SecureCRT', 'PuTTY', 'TeamViewer', 'AnyDesk', 'Postman', 'Quick Assist', 'RDP'],
       },
       {
         label: 'Cloud & Microsoft',
