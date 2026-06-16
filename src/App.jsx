@@ -697,7 +697,7 @@ function App() {
               <span className="edu-school">Lyceum of the Philippines University, Sep 2020 - Sep 2024</span>
               <span className="edu-note">Working in enterprise environments from Jan 2023 while completing degree</span>
             </div>
-            <a href="#" className="btn btn-primary" download>Download Resume</a>
+            <a href="/MarcBalcita_Resume.html" className="btn btn-primary" download="MarcBalcita_Resume.html">Download Resume</a>
           </div>
         </div>
       </FadeIn>
@@ -859,24 +859,26 @@ function App() {
           </ul>
         </div>
 
-        <div className="certifications" style={{ marginTop: '24px' }}>
+        <div className="training-section">
           <h3>Professional Training</h3>
-          {training.map((t) => (
-            <div className="training-item" key={t.label}>
-              <div className="training-header">
-                <span className="training-label">{t.label}</span>
-                {t.date && <span className="cert-detail">{t.date}</span>}
+          <div className="training-list">
+            {training.map((t) => (
+              <div className="training-card" key={t.label}>
+                <div className="training-card-header">
+                  <span className="training-card-title">{t.label}</span>
+                  {t.date && <span className="training-date-badge">{t.date}</span>}
+                </div>
+                <span className="training-org">{t.org}</span>
+                {t.bullets ? (
+                  <ul className="training-bullets">
+                    {t.bullets.map((b, i) => <li key={i}>{b}</li>)}
+                  </ul>
+                ) : (
+                  <p className="training-detail">{t.detail}</p>
+                )}
               </div>
-              <span className="training-org">{t.org}</span>
-              {t.bullets ? (
-                <ul className="training-bullets">
-                  {t.bullets.map((b, i) => <li key={i}>{b}</li>)}
-                </ul>
-              ) : (
-                <p className="training-detail">{t.detail}</p>
-              )}
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </FadeIn>
 
