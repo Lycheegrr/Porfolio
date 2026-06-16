@@ -1,16 +1,38 @@
-# React + Vite
+# Marc Joseph G. Balcita — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio for Marc Joseph G. Balcita, CCNA-certified IT Network Engineer with 3+ years of enterprise infrastructure experience.
 
-Currently, two official plugins are available:
+**Live site:** https://marcbalcita.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Stack
 
-## React Compiler
+- **React 19** + **Vite 8** — no UI library, custom components only
+- **EmailJS** — dual-send contact form (inbox notification + visitor auto-reply)
+- **Vercel** — deployment via GitHub CI/CD
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- Typewriter hero with rotating role titles
+- Scroll-triggered fade-in animations via `IntersectionObserver`
+- Animated stat counters with cubic-ease curves
+- Flip-card project grid with lightbox (keyboard accessible, Escape to close)
+- Active-section nav tracking + scroll progress bar
+- Hamburger navigation for mobile
+- `prefers-reduced-motion` support
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Sections
+
+Hero · Services · About · Experience · Industries Served · Projects · Skills · Contact
+
+## Local Development
+
+```bash
+npm install
+npm run dev
+```
+
+## Contact
+
+- Email: mjbalcitaa@gmail.com
+- LinkedIn: [marc-joseph-balcita-95b528284](https://linkedin.com/in/marc-joseph-balcita-95b528284)
+- GitHub: [Lycheegrr](https://github.com/Lycheegrr)

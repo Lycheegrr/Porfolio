@@ -486,6 +486,17 @@ const certifications = [
 
 const training = [
   {
+    label: 'Ruijie | Cybrey Workshop – NGFW & AI-Oriented SME Networking',
+    org: 'VST-ECS / Ruijie Networks Philippines · Thunderball, VST-ECS Office, Pasig City',
+    date: 'May 6, 2026',
+    bullets: [
+      'Attended vendor workshop covering the Ruijie CF Series Next-Generation Firewall (NGFW): all-in-one WAF, IPS, AV, App Control, URL Filtering, and AI Behavioral Intelligence with no additional licensing — CPU+FPGA SSL decryption architecture for hardware-speed inspection of encrypted traffic.',
+      'Explored dual-source threat intelligence (Google + Kaspersky) and 4-step security policy management: auto port discovery, traffic learning, pre-production simulation lab, and AI-driven root-cause analysis cutting resolution time by 70%.',
+      'Reviewed Ruijie Cybrey AI-oriented SME networking product launches: CR Gateway (up to 15 Gbps), CNC Controller (up to 1,024 APs), CS Switch series (L3 access to core), and CAP Wireless APs across Wi-Fi 6 and Wi-Fi 7 — all centrally managed via Ruijie Cybrey Cloud.',
+      'Covered SI/MSP real-world scenarios: proactive WLAN roaming via AI Radio, 802.1X deployment reduced from 2 weeks to 2 hours, unified multi-vendor O&M via SNMP/ICMP/SSH, and NOC automation reducing L1 manual cases by 90%.',
+    ],
+  },
+  {
     label: 'Network Engineer – CCNA Bootcamp (Hands-On Training)',
     org: 'Rivan IT / RivanCyber Training Institute',
     date: 'Sep 2025',
