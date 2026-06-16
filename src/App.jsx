@@ -697,7 +697,7 @@ function App() {
               <span className="edu-school">Lyceum of the Philippines University, Sep 2020 - Sep 2024</span>
               <span className="edu-note">Working in enterprise environments from Jan 2023 while completing degree</span>
             </div>
-            <a href="/MarcBalcita_Resume.html" className="btn btn-primary" download="MarcBalcita_Resume.html">Download Resume</a>
+            <a href="/MarcBalcita_Resume.pdf" className="btn btn-primary" download="MarcBalcita_Resume.pdf">Download Resume</a>
           </div>
         </div>
       </FadeIn>
