@@ -479,6 +479,8 @@ const publications = [
 
 const certifications = [
   { label: 'Cisco Certified Network Associate (CCNA)', detail: 'Active' },
+  { label: 'Cisco Certified Network Professional (CCNP)', detail: 'In Progress' },
+  { label: 'CompTIA Security+', detail: 'In Progress' },
   { label: 'Fiber Optic Termination and Testing', detail: 'Training Certification' },
   { label: 'Fluke Networks Copper and Fiber Testing', detail: 'Training Certification' },
   { label: 'Telephone Copper and Fiber Cable Splicing, Termination, and Testing', detail: 'Training Certification' },
@@ -517,10 +519,10 @@ const training = [
 
 // ===== EmailJS Config =====
 // Replace these with your real IDs from emailjs.com dashboard
-const EMAILJS_SERVICE_ID      = 'service_jfskfli'
-const EMAILJS_NOTIFY_TEMPLATE = 'template_jp481po'
-const EMAILJS_REPLY_TEMPLATE  = 'template_7vn2yga'
-const EMAILJS_PUBLIC_KEY      = 'RRKmtH6TWKpMSgL34'
+const EMAILJS_SERVICE_ID      = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const EMAILJS_NOTIFY_TEMPLATE = import.meta.env.VITE_EMAILJS_NOTIFY_TEMPLATE
+const EMAILJS_REPLY_TEMPLATE  = import.meta.env.VITE_EMAILJS_REPLY_TEMPLATE
+const EMAILJS_PUBLIC_KEY      = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
 const NAV_LINKS = [
   { href: '#services', label: 'Services' },
@@ -563,8 +565,13 @@ function App() {
     const handleOutside = (e) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) closeMenu()
     }
+    const handleEscape = (e) => { if (e.key === 'Escape') closeMenu() }
     document.addEventListener('mousedown', handleOutside)
-    return () => document.removeEventListener('mousedown', handleOutside)
+    document.addEventListener('keydown', handleEscape)
+    return () => {
+      document.removeEventListener('mousedown', handleOutside)
+      document.removeEventListener('keydown', handleEscape)
+    }
   }, [menuOpen])
 
   const handleSubmit = async (e) => {
@@ -583,7 +590,7 @@ function App() {
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_REPLY_TEMPLATE,
-        { to_name: data.get('name'), to_email: data.get('email') },
+        { to_name: data.get('name'), to_email: data.get('email'), subject: data.get('subject') },
         EMAILJS_PUBLIC_KEY,
       )
       setFormState('sent')
@@ -599,6 +606,12 @@ function App() {
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [lightbox])
+
+  useEffect(() => {
+    if (formState !== 'sent') return
+    const t = setTimeout(() => setFormState('idle'), 5000)
+    return () => clearTimeout(t)
+  }, [formState])
 
   return (
     <>
@@ -645,6 +658,7 @@ function App() {
           <div className="hero-actions">
             <a href="#experience" className="btn btn-primary">View Experience</a>
             <a href="#contact" className="btn btn-outline">Contact Me</a>
+            <a href="/MarcBalcita_Resume.pdf" className="btn btn-outline" download="MarcBalcita_Resume.pdf">Download Resume</a>
           </div>
         </div>
       </section>
@@ -757,6 +771,15 @@ function App() {
               className={`project-flip${flippedCard === project.title ? ' flipped' : ''}`}
               key={project.title}
               onClick={() => setFlippedCard(flippedCard === project.title ? null : project.title)}
+              tabIndex={0}
+              role="button"
+              aria-pressed={flippedCard === project.title}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  setFlippedCard(flippedCard === project.title ? null : project.title)
+                }
+              }}
             >
               <div className="project-flip-inner">
 
@@ -853,7 +876,7 @@ function App() {
             {certifications.map((cert, i) => (
               <li key={i}>
                 <span className="cert-label">{cert.label}</span>
-                <span className="cert-detail">{cert.detail}</span>
+                <span className={cert.detail === 'In Progress' ? 'cert-detail cert-detail--progress' : 'cert-detail'}>{cert.detail}</span>
               </li>
             ))}
           </ul>
@@ -891,6 +914,7 @@ function App() {
         <form className="contact-form" onSubmit={handleSubmit} ref={formRef}>
           <input type="text" name="name" placeholder="Your Name" required />
           <input type="email" name="email" placeholder="Your Email" required />
+          <input type="text" name="subject" placeholder="Subject" required />
           <textarea name="message" placeholder="Your Message" rows={5} required />
           <button type="submit" className="btn btn-primary" disabled={formState === 'sending'}>
             {formState === 'sending' ? 'Sending…' : 'Send Message'}

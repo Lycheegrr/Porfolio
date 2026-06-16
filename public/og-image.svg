@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#00d4ff" stroke-width="0.7" stroke-opacity="0.07"/>
+    </pattern>
+    <radialGradient id="glow" cx="42%" cy="50%" r="52%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.13"/>
+      <stop offset="100%" stop-color="#04090f" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowR" cx="88%" cy="40%" r="35%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#04090f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#04090f"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect width="1200" height="630" fill="url(#glowR)"/>
+
+  <!-- Top accent bar -->
+  <rect width="1200" height="3" fill="#00d4ff"/>
+
+  <!-- Left cyan rule -->
+  <rect x="60" y="90" width="3" height="450" rx="1.5" fill="#00d4ff" opacity="0.6"/>
+
+  <!-- Section label -->
+  <text x="84" y="140" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" font-weight="700" letter-spacing="4" fill="#00d4ff" opacity="0.65">IT NETWORK ENGINEER · PHILIPPINES</text>
+
+  <!-- Name -->
+  <text x="84" y="242" font-family="'Segoe UI',system-ui,sans-serif" font-size="60" font-weight="800" fill="white" letter-spacing="-1.5">Marc Joseph G. Balcita</text>
+
+  <!-- Underline accent -->
+  <rect x="84" y="262" width="72" height="4" rx="2" fill="#00d4ff"/>
+
+  <!-- Subtitle lines -->
+  <text x="84" y="308" font-family="'Segoe UI',system-ui,sans-serif" font-size="19" fill="#cce8ff" opacity="0.62">CCNA Certified · NOC &amp; Infrastructure Operations</text>
+  <text x="84" y="338" font-family="'Segoe UI',system-ui,sans-serif" font-size="19" fill="#cce8ff" opacity="0.62">3+ Years · Multi-site Enterprise Deployments</text>
+
+  <!-- Tags -->
+  <rect x="84" y="372" width="126" height="30" rx="15" fill="#00d4ff" fill-opacity="0.09" stroke="#00d4ff" stroke-opacity="0.28" stroke-width="1"/>
+  <text x="147" y="392" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" font-weight="600" fill="#00d4ff">Cisco / CCNA</text>
+
+  <rect x="220" y="372" width="110" height="30" rx="15" fill="#00d4ff" fill-opacity="0.09" stroke="#00d4ff" stroke-opacity="0.28" stroke-width="1"/>
+  <text x="275" y="392" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" font-weight="600" fill="#00d4ff">Palo Alto</text>
+
+  <rect x="340" y="372" width="114" height="30" rx="15" fill="#00d4ff" fill-opacity="0.09" stroke="#00d4ff" stroke-opacity="0.28" stroke-width="1"/>
+  <text x="397" y="392" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" font-weight="600" fill="#00d4ff">Fiber Optic</text>
+
+  <rect x="464" y="372" width="118" height="30" rx="15" fill="#00d4ff" fill-opacity="0.09" stroke="#00d4ff" stroke-opacity="0.28" stroke-width="1"/>
+  <text x="523" y="392" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" font-weight="600" fill="#00d4ff">Data Center</text>
+
+  <rect x="592" y="372" width="98" height="30" rx="15" fill="#00d4ff" fill-opacity="0.09" stroke="#00d4ff" stroke-opacity="0.28" stroke-width="1"/>
+  <text x="641" y="392" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" font-weight="600" fill="#00d4ff">NOC Ops</text>
+
+  <!-- URL -->
+  <text x="84" y="510" font-family="'Segoe UI',system-ui,sans-serif" font-size="16" fill="#00d4ff" opacity="0.5">marcbalcita.vercel.app</text>
+  <text x="84" y="535" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" fill="#cce8ff" opacity="0.28">Open to Opportunities · PH &amp; International</text>
+
+  <!-- Right side: decorative network graph -->
+  <g stroke="#00d4ff" stroke-width="1.2" fill="none" opacity="0.12">
+    <line x1="920" y1="220" x2="1040" y2="155"/>
+    <line x1="920" y1="220" x2="1090" y2="300"/>
+    <line x1="920" y1="220" x2="960" y2="370"/>
+    <line x1="920" y1="220" x2="830" y2="310"/>
+    <line x1="1040" y1="155" x2="1090" y2="300"/>
+    <line x1="1090" y1="300" x2="960" y2="370"/>
+    <line x1="960" y1="370" x2="830" y2="310"/>
+    <line x1="1040" y1="155" x2="1110" y2="190"/>
+    <line x1="1110" y1="190" x2="1090" y2="300"/>
+    <line x1="830" y1="310" x2="770" y2="380"/>
+    <line x1="770" y1="380" x2="830" y2="450"/>
+    <line x1="830" y1="450" x2="960" y2="370"/>
+    <line x1="1090" y1="300" x2="1130" y2="390"/>
+    <line x1="1130" y1="390" x2="960" y2="370"/>
+  </g>
+  <g fill="#00d4ff">
+    <circle cx="920" cy="220" r="9" opacity="0.55"/>
+    <circle cx="1040" cy="155" r="5.5" opacity="0.38"/>
+    <circle cx="1090" cy="300" r="6.5" opacity="0.42"/>
+    <circle cx="960" cy="370" r="5.5" opacity="0.38"/>
+    <circle cx="830" cy="310" r="5.5" opacity="0.38"/>
+    <circle cx="1110" cy="190" r="4" opacity="0.28"/>
+    <circle cx="770" cy="380" r="4" opacity="0.28"/>
+    <circle cx="830" cy="450" r="4" opacity="0.28"/>
+    <circle cx="1130" cy="390" r="4" opacity="0.28"/>
+  </g>
+
+  <!-- Bottom accent bar -->
+  <rect y="627" width="1200" height="3" fill="#00d4ff" opacity="0.4"/>
+</svg>
